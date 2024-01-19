@@ -1,0 +1,95 @@
+{
+	"created": "2024-01-19 23:01:18",
+	"attendees": [
+		{
+			"firstName": "Zulma",
+			"company": "Smit V.O.F.",
+			"lastName": "Bakker",
+			"id": "Zulma Bakker",
+			"middleName": "Corazon",
+			"email": "zulma@bakker.nl",
+			"userName": "zulma_bakker"
+		},
+		{
+			"firstName": "Queenie",
+			"company": "Visser Combinatie",
+			"lastName": "Janssen",
+			"id": "Queenie Janssen",
+			"middleName": "Diedre",
+			"email": "queenie@janssen.nl",
+			"userName": "queenie_janssen"
+		},
+		{
+			"firstName": "Deonna",
+			"company": "Peters Combinatie",
+			"lastName": "Van der Meer",
+			"id": "Deonna Van der Meer",
+			"middleName": "Alysa",
+			"email": "deonna@vandermeer.nl",
+			"userName": "deonna_van_der_meer"
+		},
+		{
+			"firstName": "Corazon",
+			"company": "De Wit BV",
+			"lastName": "Dekker",
+			"id": "Corazon Dekker",
+			"middleName": "Chantell",
+			"email": "corazon@dekker.nl",
+			"userName": "corazon_dekker"
+		},
+		{
+			"firstName": "Lowell",
+			"company": "Van der Meer BV",
+			"lastName": "Smits",
+			"id": "Lowell Smits",
+			"middleName": "Diedre",
+			"email": "lowell@smits.nl",
+			"userName": "lowell_smits"
+		},
+		{
+			"firstName": "Alysa",
+			"company": "Bakker NV",
+			"lastName": "Janssen",
+			"id": "Alysa Janssen",
+			"middleName": "Elina",
+			"email": "alysa@janssen.nl",
+			"userName": "alysa_janssen"
+		},
+		{
+			"firstName": "Corazon",
+			"company": "Van Leeuwen V.O.F.",
+			"lastName": "Hendriks",
+			"id": "Corazon Hendriks",
+			"middleName": "Kortney",
+			"email": "corazon@hendriks.nl",
+			"userName": "corazon_hendriks"
+		},
+		{
+			"firstName": "Corazon",
+			"company": "Van Dijk BV",
+			"lastName": "Van Dijk",
+			"id": "Corazon Van Dijk",
+			"middleName": "Sunshine",
+			"email": "corazon@vandijk.nl",
+			"userName": "corazon_van_dijk"
+		},
+		{
+			"firstName": "Shaina",
+			"company": "De Boer BV",
+			"lastName": "Van Dijk",
+			"id": "Shaina Van Dijk",
+			"middleName": "Corazon",
+			"email": "shaina@vandijk.nl",
+			"userName": "shaina_van_dijk"
+		},
+		{
+			"firstName": "Queenie",
+			"company": "Van der Meer BV",
+			"lastName": "De Groot",
+			"id": "Queenie De Groot",
+			"middleName": "Corazon",
+			"email": "queenie@degroot.nl",
+			"userName": "queenie_de_groot"
+		}
+	]
+}
