@@ -1,4 +1,15 @@
+-lib hxnodejs
+
 -cp src
--D analyzer-optimize
 -main MainNOde
---interp
+-js bin/main.js
+# -debug
+-dce full
+-D js-es=6
+-D no-deprecation-warnings
+
+--next
+
+# run application
+-cmd cd bin
+-cmd node main.js
