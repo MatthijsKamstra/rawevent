@@ -76,6 +76,7 @@ class MainNode {
 
 		// log(qrArr.length);
 
+		// replace and guess...
 		var combo = tag;
 		combo = combo.replace('</svg>', '<g	id="qrcode" transform="matrix(0.26682031,0,0,0.26682031,4.847,35.24044)">${rects}</g></svg>');
 
@@ -114,7 +115,11 @@ class MainNode {
 			width: 256,
 			height: 256,
 			color: "#000000",
-			background: "#ffffff",
+			// background: "#ffffff",
+			// background: "#ffffffAA",
+			// background: "rgba(255, 255, 255, 0.0)",
+			background: "none",
+			// background: "transparant",
 			ecl: "M",
 		}).svg();
 

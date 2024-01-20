@@ -181,7 +181,7 @@ class MainNode {
 		let str = "00000";
 		let temp = str.length - ("" + i).length;
 		let newID = HxOverrides.substr(str,0,temp) + i;
-		let svg = new QrcodeSvg({ content : "" + attendee.userName, padding : 4, width : 256, height : 256, color : "#000000", background : "#ffffff", ecl : "M"}).svg();
+		let svg = new QrcodeSvg({ content : "" + attendee.userName, padding : 4, width : 256, height : 256, color : "#000000", background : "none", ecl : "M"}).svg();
 		js_node_Fs.writeFileSync("" + const_Folder.EXPORT + "/qr/" + newID + "_qr_" + attendee.userName + ".svg",svg);
 	}
 	dummyQR() {
