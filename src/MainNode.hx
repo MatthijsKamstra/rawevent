@@ -2,10 +2,8 @@ package;
 
 import const.Folder;
 import haxe.Json;
-import haxe.Log;
 import haxe.io.Path;
 import js.Browser.*;
-import js.Syntax;
 import sys.FileSystem;
 
 class MainNode {
@@ -35,8 +33,8 @@ class MainNode {
 
 		// var folder = 'export/interstellar';
 		FileSystem.createDirectory(Folder.EXPORT);
-		FileSystem.createDirectory(Folder.EXPORT + '/test');
 		FileSystem.createDirectory(Folder.EXPORT + '/qr');
+		FileSystem.createDirectory(Folder.EXPORT + '/tag');
 	}
 
 	function generateQR4Attendees() {
@@ -52,7 +50,29 @@ class MainNode {
 			var _attendees = attendeesArr[i];
 			// trace(_attendees);
 			createQRCodes(_attendees, i);
+			createTag(_attendees, i);
+			combineQrAndTag(_attendees, i);
 		}
+	}
+
+	function combineQrAndTag(attendee:AttendeeObj, i:Int) {
+		// throw new haxe.exceptions.NotImplementedException();
+	}
+
+	function createTag(attendee:AttendeeObj, i:Int) {
+		var str = '00000';
+		var temp = (str.length - '${i}'.length);
+		var newID:String = str.substr(0, temp) + i;
+
+		var svg = '<svg>${attendee.userName}</svg>';
+
+		var svg = sys.io.File.getContent('template/nametag_cleaner_v01.svg');
+
+		svg = svg.replace("$company", '${attendee.company}');
+		svg = svg.replace("$lastname", '${attendee.lastName}');
+		svg = svg.replace("$firstname", '${attendee.firstName}');
+
+		sys.io.File.saveContent('${Folder.EXPORT}/tag/${newID}_tag_${attendee.userName}.svg', svg);
 	}
 
 	function createQRCodes(attendee:AttendeeObj, i:Int) {
@@ -61,6 +81,8 @@ class MainNode {
 		var newID:String = str.substr(0, temp) + i;
 
 		// log(newID);
+
+		// 256px  = 67,733 mm
 
 		var svg = new QrcodeSvg({
 			// content: 'http://foobar.nl/${attendee.userName}',

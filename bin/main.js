@@ -117,8 +117,8 @@ class MainNode {
 		process.stdout.write(Std.string(v9));
 		process.stdout.write("\n");
 		sys_FileSystem.createDirectory(const_Folder.EXPORT);
-		sys_FileSystem.createDirectory(const_Folder.EXPORT + "/test");
 		sys_FileSystem.createDirectory(const_Folder.EXPORT + "/qr");
+		sys_FileSystem.createDirectory(const_Folder.EXPORT + "/tag");
 	}
 	generateQR4Attendees() {
 		let content = js_node_Fs.readFileSync("data/attendees_00100.json",{ encoding : "utf8"});
@@ -140,7 +140,22 @@ class MainNode {
 			let i = _g2++;
 			let _attendees = attendeesArr[i];
 			this.createQRCodes(_attendees,i);
+			this.createTag(_attendees,i);
+			this.combineQrAndTag(_attendees,i);
 		}
+	}
+	combineQrAndTag(attendee,i) {
+	}
+	createTag(attendee,i) {
+		let str = "00000";
+		let temp = str.length - ("" + i).length;
+		let newID = HxOverrides.substr(str,0,temp) + i;
+		let svg = "<svg>" + attendee.userName + "</svg>";
+		let svg1 = js_node_Fs.readFileSync("template/nametag_cleaner_v01.svg",{ encoding : "utf8"});
+		svg1 = StringTools.replace(svg1,"$company","" + attendee.company);
+		svg1 = StringTools.replace(svg1,"$lastname","" + attendee.lastName);
+		svg1 = StringTools.replace(svg1,"$firstname","" + attendee.firstName);
+		js_node_Fs.writeFileSync("" + const_Folder.EXPORT + "/tag/" + newID + "_tag_" + attendee.userName + ".svg",svg1);
 	}
 	createQRCodes(attendee,i) {
 		let str = "00000";
@@ -171,6 +186,12 @@ class Std {
 	}
 }
 Std.__name__ = true;
+class StringTools {
+	static replace(s,sub,by) {
+		return s.split(sub).join(by);
+	}
+}
+StringTools.__name__ = true;
 class const_Folder {
 }
 const_Folder.__name__ = true;

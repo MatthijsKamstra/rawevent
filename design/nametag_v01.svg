@@ -16,9 +16,9 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
      inkscape:document-units="mm"
-     inkscape:zoom="1.6952933"
-     inkscape:cx="147.17218"
-     inkscape:cy="204.09448"
+     inkscape:zoom="1.6670164"
+     inkscape:cx="147.26909"
+     inkscape:cy="203.9572"
      id="namedview1"
      pagecolor="#ffffff"
      bordercolor="#000000"
@@ -32,7 +32,7 @@
      inkscape:window-x="0"
      inkscape:window-y="34"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer1">
+     inkscape:current-layer="layer2">
     <inkscape:page
        x="0"
        y="0"
@@ -40,7 +40,10 @@
        height="108"
        id="page1"
        margin="5.0000005"
-       bleed="5.0000005" />
+       bleed="5.0000005"
+       inkscape:export-filename="nametag_v01__.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
   </sodipodi:namedview>
   <defs
      id="defs1">
@@ -80,12 +83,12 @@
        y="-5.0000005"
        inkscape:label="gradient" />
     <rect
-       style="fill:#ffffff;stroke:#fcfcfc;stroke-width:5.40875;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#ffffff;stroke:#fcfcfc;stroke-width:4.54709;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
        id="rect2"
-       width="62.591255"
-       height="48.777538"
-       x="7.7043734"
-       y="22.265131"
+       width="63.452919"
+       height="34.005917"
+       x="7.2735415"
+       y="21.834299"
        inkscape:label="rounded" />
   </g>
   <g
@@ -94,36 +97,39 @@
      id="layer1">
     <text
        xml:space="preserve"
-       style="font-size:16.9333px;line-height:1;font-family:'Bebas Neue';-inkscape-font-specification:'Bebas Neue, @wght=700';font-variation-settings:'wght' 700;text-align:start;letter-spacing:0px;text-anchor:start;vector-effect:non-scaling-stroke;fill:#4169e1;stroke:none;stroke-width:0.264583;stroke-linejoin:round;-inkscape-stroke:hairline;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-       x="9.3518677"
-       y="68.511681"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.1962px;line-height:1;font-family:'Bebas Neue';-inkscape-font-specification:'Bebas Neue, @wght=700';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;text-align:start;letter-spacing:0px;text-anchor:start;vector-effect:non-scaling-stroke;fill:#4169e1;stroke:none;stroke-width:0.174941;stroke-linejoin:round;-inkscape-stroke:hairline"
+       x="9.5182438"
+       y="53.384209"
        id="text3"
        inkscape:label="$company"><tspan
          sodipodi:role="line"
          id="tspan3"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bebas Neue';-inkscape-font-specification:'Bebas Neue, @wght=700';text-align:start;text-anchor:start;fill:#4169e1;stroke:none;stroke-width:0.264583;font-variation-settings:'wght' 700;font-size:16.93330002px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-         x="9.3518677"
-         y="68.511681">$company</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.1962px;font-family:'Bebas Neue';-inkscape-font-specification:'Bebas Neue, @wght=700';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;text-align:start;text-anchor:start;fill:#4169e1;stroke:none;stroke-width:0.174941"
+         x="9.5182438"
+         y="53.384209">$company</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16.9333px;line-height:1;font-family:'Bebas Neue';-inkscape-font-specification:'Bebas Neue, Normal';text-align:start;letter-spacing:0px;text-anchor:start;vector-effect:non-scaling-stroke;fill:#ff0000;stroke:none;stroke-width:0.264583;stroke-linejoin:round;-inkscape-stroke:hairline;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-       x="9.2333345"
-       y="52.352638"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.1962px;line-height:1;font-family:'Bebas Neue';-inkscape-font-specification:'Bebas Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;text-anchor:start;vector-effect:non-scaling-stroke;fill:#ff0000;stroke:none;stroke-width:0.174941;stroke-linejoin:round;-inkscape-stroke:hairline"
+       x="9.4398699"
+       y="42.699947"
        id="text2"
        inkscape:label="$lastname"><tspan
          sodipodi:role="line"
-         id="tspan2">$lastname</tspan></text>
+         id="tspan2"
+         x="9.4398699"
+         y="42.699947"
+         style="stroke-width:0.174941">$lastname</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.9333px;line-height:1;font-family:'Bebas Neue';-inkscape-font-specification:'Bebas Neue, @wght=700';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;text-align:start;letter-spacing:0px;text-anchor:start;vector-effect:non-scaling-stroke;fill:#000000;stroke:none;stroke-width:0.264583;stroke-linejoin:round;-inkscape-stroke:hairline"
-       x="9.2333345"
-       y="36.477634"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.1962px;line-height:1;font-family:'Bebas Neue';-inkscape-font-specification:'Bebas Neue, @wght=700';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;text-align:start;letter-spacing:0px;text-anchor:start;vector-effect:non-scaling-stroke;fill:#000000;stroke:none;stroke-width:0.174941;stroke-linejoin:round;-inkscape-stroke:hairline"
+       x="9.4398699"
+       y="32.203491"
        id="text1"
        inkscape:label="$firstname"><tspan
          sodipodi:role="line"
          id="tspan1"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.9333px;font-family:'Bebas Neue';-inkscape-font-specification:'Bebas Neue, @wght=700';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;text-align:start;text-anchor:start;fill:#000000;stroke:none;stroke-width:0.264583"
-         x="9.2333345"
-         y="36.477634">$firstname</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.1962px;font-family:'Bebas Neue';-inkscape-font-specification:'Bebas Neue, @wght=700';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;text-align:start;text-anchor:start;fill:#000000;stroke:none;stroke-width:0.174941"
+         x="9.4398699"
+         y="32.203491">$firstname</tspan></text>
   </g>
 </svg>
