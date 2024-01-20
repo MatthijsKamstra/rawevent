@@ -27,7 +27,7 @@ class HxOverrides {
 HxOverrides.__name__ = true;
 class MainNode {
 	constructor() {
-		console.log("src/MainNode.hx:13:","MainNode");
+		console.log("src/MainNode.hx:11:","MainNode");
 		this.init();
 	}
 	init() {
@@ -119,6 +119,7 @@ class MainNode {
 		sys_FileSystem.createDirectory(const_Folder.EXPORT);
 		sys_FileSystem.createDirectory(const_Folder.EXPORT + "/qr");
 		sys_FileSystem.createDirectory(const_Folder.EXPORT + "/tag");
+		sys_FileSystem.createDirectory(const_Folder.EXPORT + "/combo");
 	}
 	generateQR4Attendees() {
 		let content = js_node_Fs.readFileSync("data/attendees_00100.json",{ encoding : "utf8"});
@@ -145,6 +146,25 @@ class MainNode {
 		}
 	}
 	combineQrAndTag(attendee,i) {
+		let str = "00000";
+		let temp = str.length - ("" + i).length;
+		let newID = HxOverrides.substr(str,0,temp) + i;
+		let tag = js_node_Fs.readFileSync("" + const_Folder.EXPORT + "/tag/" + newID + "_tag_" + attendee.userName + ".svg",{ encoding : "utf8"});
+		let qr = js_node_Fs.readFileSync("" + const_Folder.EXPORT + "/qr/" + newID + "_qr_" + attendee.userName + ".svg",{ encoding : "utf8"});
+		let qrArr = qr.split("\n");
+		let rects = "";
+		let _g = 0;
+		let _g1 = qrArr.length;
+		while(_g < _g1) {
+			let i = _g++;
+			let line = qrArr[i];
+			if(line.indexOf("<rect") != -1) {
+				rects += line + "\n";
+			}
+		}
+		let combo = tag;
+		combo = StringTools.replace(combo,"</svg>","<g\tid=\"qrcode\" transform=\"matrix(0.26682031,0,0,0.26682031,4.847,35.24044)\">" + rects + "</g></svg>");
+		js_node_Fs.writeFileSync("" + const_Folder.EXPORT + "/combo/" + newID + "_combo_" + attendee.userName + ".svg",combo);
 	}
 	createTag(attendee,i) {
 		let str = "00000";

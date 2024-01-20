@@ -35,6 +35,7 @@ class MainNode {
 		FileSystem.createDirectory(Folder.EXPORT);
 		FileSystem.createDirectory(Folder.EXPORT + '/qr');
 		FileSystem.createDirectory(Folder.EXPORT + '/tag');
+		FileSystem.createDirectory(Folder.EXPORT + '/combo');
 	}
 
 	function generateQR4Attendees() {
@@ -56,7 +57,29 @@ class MainNode {
 	}
 
 	function combineQrAndTag(attendee:AttendeeObj, i:Int) {
-		// throw new haxe.exceptions.NotImplementedException();
+		var str = '00000';
+		var temp = (str.length - '${i}'.length);
+		var newID:String = str.substr(0, temp) + i;
+
+		var tag = sys.io.File.getContent('${Folder.EXPORT}/tag/${newID}_tag_${attendee.userName}.svg');
+		var qr = sys.io.File.getContent('${Folder.EXPORT}/qr/${newID}_qr_${attendee.userName}.svg');
+
+		var qrArr = qr.split('\n');
+
+		var rects = '';
+		for (i in 0...qrArr.length) {
+			var line = qrArr[i];
+			if (line.indexOf('<rect') != -1) {
+				rects += line + '\n';
+			}
+		}
+
+		// log(qrArr.length);
+
+		var combo = tag;
+		combo = combo.replace('</svg>', '<g	id="qrcode" transform="matrix(0.26682031,0,0,0.26682031,4.847,35.24044)">${rects}</g></svg>');
+
+		sys.io.File.saveContent('${Folder.EXPORT}/combo/${newID}_combo_${attendee.userName}.svg', combo);
 	}
 
 	function createTag(attendee:AttendeeObj, i:Int) {
