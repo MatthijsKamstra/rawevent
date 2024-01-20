@@ -1,11 +1,7 @@
 {
   "name": "rawevent",
-  "description": "https://www.npmjs.com/package/qrcode-svg",
+  "description": "",
   "version": "1.0.0",
-  "main": "index.js",
-  "bin": {
-    "rawevent": "bin/main.js"
-  },
   "author": "",
   "license": "MIT",
   "scripts": {
