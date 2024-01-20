@@ -1,17 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="55mm" height="85mm" viewBox="0 0 55 85">
-	<text xml:space="preserve" x="-.576" y="58.711" style="font-size:16.9333px;line-height:1;font-family:Oswald;-inkscape-font-specification:&quot;Oswald, @wght=700&quot;;font-variation-settings:&quot;wght&quot;700;text-align:start;letter-spacing:0;text-anchor:start;vector-effect:non-scaling-stroke;fill:#7cfc00;stroke:none;stroke-width:.264583;stroke-linejoin:round;-inkscape-stroke:hairline">
-		<tspan x="-.576" y="58.711" style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-family:&quot;Bebas Neue&quot;;-inkscape-font-specification:&quot;Bebas Neue&quot;;text-align:start;text-anchor:start;fill:#7cfc00;stroke:none;stroke-width:.264583">
-			company
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78mm" height="108mm" viewBox="0 0 78 108">
+	<defs>
+		<linearGradient id="a">
+			<stop offset="0" style="stop-color:#7cfc00;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#002efc;stop-opacity:1" />
+		</linearGradient>
+		<linearGradient xlink:href="#a" id="b" x1="0" x2="78" y1="0" y2="108" gradientTransform="matrix(1.01356 0 0 .99032 .068 1.094)" gradientUnits="userSpaceOnUse" />
+	</defs>
+	<path d="M-5-5h88v118H-5z" style="vector-effect:non-scaling-stroke;fill:url(#b);stroke-width:.265078;stroke-linejoin:round;-inkscape-stroke:hairline" />
+	<path d="M7.704 22.265h62.591v48.778H7.704z" style="fill:#fff;stroke:#fcfcfc;stroke-width:5.40875;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" />
+	<text xml:space="preserve" x="9.352" y="68.512" style="font-size:16.9333px;line-height:1;font-family:&quot;Bebas Neue&quot;;-inkscape-font-specification:&quot;Bebas Neue, @wght=700&quot;;font-variation-settings:&quot;wght&quot;700;text-align:start;letter-spacing:0;text-anchor:start;vector-effect:non-scaling-stroke;fill:#4169e1;stroke:none;stroke-width:.264583;stroke-linejoin:round;-inkscape-stroke:hairline;font-weight:400;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">
+		<tspan x="9.352" y="68.512" style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-family:&quot;Bebas Neue&quot;;-inkscape-font-specification:&quot;Bebas Neue, @wght=700&quot;;text-align:start;text-anchor:start;fill:#4169e1;stroke:none;stroke-width:.264583;font-variation-settings:&quot;wght&quot;700;font-size:16.93330002px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">
+			$company
 		</tspan>
 	</text>
-	<text xml:space="preserve" x="-.694" y="42.552" style="font-size:16.9333px;line-height:1;font-family:Oswald;-inkscape-font-specification:&quot;Oswald, @wght=700&quot;;font-variation-settings:&quot;wght&quot;700;text-align:start;letter-spacing:0;text-anchor:start;vector-effect:non-scaling-stroke;fill:red;stroke:none;stroke-width:.264583;stroke-linejoin:round;-inkscape-stroke:hairline">
-		<tspan x="-.694" y="42.552" style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-family:&quot;Bebas Neue&quot;;-inkscape-font-specification:&quot;Bebas Neue&quot;;text-align:start;text-anchor:start;fill:red;stroke:none;stroke-width:.264583">
-			lastName
+	<text xml:space="preserve" x="9.233" y="52.353" style="font-size:16.9333px;line-height:1;font-family:&quot;Bebas Neue&quot;;-inkscape-font-specification:&quot;Bebas Neue, Normal&quot;;text-align:start;letter-spacing:0;text-anchor:start;vector-effect:non-scaling-stroke;fill:red;stroke:none;stroke-width:.264583;stroke-linejoin:round;-inkscape-stroke:hairline;font-weight:400;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">
+		<tspan>
+			$lastname
 		</tspan>
 	</text>
-	<text xml:space="preserve" x="-.694" y="26.393" style="font-size:16.9333px;line-height:1;font-family:Oswald;-inkscape-font-specification:&quot;Oswald, @wght=700&quot;;font-variation-settings:&quot;wght&quot;700;text-align:start;letter-spacing:0;text-anchor:start;vector-effect:non-scaling-stroke;fill:#000;stroke:none;stroke-width:.264583;stroke-linejoin:round;-inkscape-stroke:hairline">
-		<tspan x="-.694" y="26.393" style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-family:&quot;Bebas Neue&quot;;-inkscape-font-specification:&quot;Bebas Neue&quot;;text-align:start;text-anchor:start;fill:#000;stroke:none;stroke-width:.264583">
-			FirstName
+	<text xml:space="preserve" x="9.233" y="36.478" style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16.9333px;line-height:1;font-family:&quot;Bebas Neue&quot;;-inkscape-font-specification:&quot;Bebas Neue, @wght=700&quot;;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:&quot;wght&quot;700;text-align:start;letter-spacing:0;text-anchor:start;vector-effect:non-scaling-stroke;fill:#000;stroke:none;stroke-width:.264583;stroke-linejoin:round;-inkscape-stroke:hairline">
+		<tspan x="9.233" y="36.478" style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:16.9333px;font-family:&quot;Bebas Neue&quot;;-inkscape-font-specification:&quot;Bebas Neue, @wght=700&quot;;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:&quot;wght&quot;700;text-align:start;text-anchor:start;fill:#000;stroke:none;stroke-width:.264583">
+			$firstname
 		</tspan>
 	</text>
 </svg>
