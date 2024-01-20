@@ -1,4 +1,13 @@
 {
+  "name": "rawevent",
+  "description": "https://www.npmjs.com/package/qrcode-svg",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "rawevent": "bin/main.js"
+  },
+  "author": "",
+  "license": "MIT",
   "scripts": {
     "svgo": "svgo -i design/nametag_v01.svg -o bin/template/nametag_cleaner_v01.svg --pretty",
     "inkscape": "inkscape --export-type='png' design/nametag_v01.svg"
