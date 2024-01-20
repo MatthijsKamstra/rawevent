@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "@types/qrcode-svg": "^1.1.4",
     "qrcode-svg": "^1.1.0"
+  },
+  "devDependencies": {
+    "dts2hx": "^0.20.0"
   }
 }

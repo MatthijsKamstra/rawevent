@@ -1,7 +1,8 @@
 -lib hxnodejs
+-lib qrcode-svg
 
 -cp src
--main MainNOde
+-main MainNode
 -js bin/main.js
 # -debug
 -dce full
