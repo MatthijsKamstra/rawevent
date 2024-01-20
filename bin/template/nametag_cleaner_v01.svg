@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="55mm" height="85mm" viewBox="0 0 55 85">
+	<text xml:space="preserve" x="-.576" y="58.711" style="font-size:16.9333px;line-height:1;font-family:Oswald;-inkscape-font-specification:&quot;Oswald, @wght=700&quot;;font-variation-settings:&quot;wght&quot;700;text-align:start;letter-spacing:0;text-anchor:start;vector-effect:non-scaling-stroke;fill:#7cfc00;stroke:none;stroke-width:.264583;stroke-linejoin:round;-inkscape-stroke:hairline">
+		<tspan x="-.576" y="58.711" style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-family:&quot;Bebas Neue&quot;;-inkscape-font-specification:&quot;Bebas Neue&quot;;text-align:start;text-anchor:start;fill:#7cfc00;stroke:none;stroke-width:.264583">
+			company
+		</tspan>
+	</text>
+	<text xml:space="preserve" x="-.694" y="42.552" style="font-size:16.9333px;line-height:1;font-family:Oswald;-inkscape-font-specification:&quot;Oswald, @wght=700&quot;;font-variation-settings:&quot;wght&quot;700;text-align:start;letter-spacing:0;text-anchor:start;vector-effect:non-scaling-stroke;fill:red;stroke:none;stroke-width:.264583;stroke-linejoin:round;-inkscape-stroke:hairline">
+		<tspan x="-.694" y="42.552" style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-family:&quot;Bebas Neue&quot;;-inkscape-font-specification:&quot;Bebas Neue&quot;;text-align:start;text-anchor:start;fill:red;stroke:none;stroke-width:.264583">
+			lastName
+		</tspan>
+	</text>
+	<text xml:space="preserve" x="-.694" y="26.393" style="font-size:16.9333px;line-height:1;font-family:Oswald;-inkscape-font-specification:&quot;Oswald, @wght=700&quot;;font-variation-settings:&quot;wght&quot;700;text-align:start;letter-spacing:0;text-anchor:start;vector-effect:non-scaling-stroke;fill:#000;stroke:none;stroke-width:.264583;stroke-linejoin:round;-inkscape-stroke:hairline">
+		<tspan x="-.694" y="26.393" style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-family:&quot;Bebas Neue&quot;;-inkscape-font-specification:&quot;Bebas Neue&quot;;text-align:start;text-anchor:start;fill:#000;stroke:none;stroke-width:.264583">
+			FirstName
+		</tspan>
+	</text>
+</svg>

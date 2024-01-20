@@ -32,3 +32,7 @@ add `@:native('QRCode')`
 2. we want to make sure it uses the name `QRCode` and not `QrcodeSvg`
 
 -->
+
+```bash
+svgo -i nametag_v01.svg -o nametag_cleaner_v01.svg
+```

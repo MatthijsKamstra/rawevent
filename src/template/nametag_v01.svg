@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="55mm"
+   height="85mm"
+   viewBox="0 0 55 85"
+   id="SVGRoot"
+   version="1.1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   sodipodi:docname="nametag_v01.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     inkscape:document-units="mm"
+     inkscape:zoom="0.59082031"
+     inkscape:cx="161.63967"
+     inkscape:cy="103.24628"
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:window-width="1496"
+     inkscape:window-height="905"
+     inkscape:window-x="0"
+     inkscape:window-y="34"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="text"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:16.9333px;line-height:1;font-family:Oswald;-inkscape-font-specification:'Oswald, @wght=700';font-variation-settings:'wght' 700;text-align:start;letter-spacing:0px;text-anchor:start;vector-effect:non-scaling-stroke;fill:#7cfc00;stroke:none;stroke-width:0.264583;stroke-linejoin:round;-inkscape-stroke:hairline"
+       x="-0.57573217"
+       y="58.711201"
+       id="text3"
+       inkscape:label="company"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bebas Neue';-inkscape-font-specification:'Bebas Neue';text-align:start;text-anchor:start;fill:#7cfc00;stroke:none;stroke-width:0.264583"
+         x="-0.57573217"
+         y="58.711201">company</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:16.9333px;line-height:1;font-family:Oswald;-inkscape-font-specification:'Oswald, @wght=700';font-variation-settings:'wght' 700;text-align:start;letter-spacing:0px;text-anchor:start;vector-effect:non-scaling-stroke;fill:#ff0000;stroke:none;stroke-width:0.264583;stroke-linejoin:round;-inkscape-stroke:hairline"
+       x="-0.69426531"
+       y="42.552155"
+       id="text2"
+       inkscape:label="lastname"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bebas Neue';-inkscape-font-specification:'Bebas Neue';text-align:start;text-anchor:start;fill:#ff0000;stroke:none;stroke-width:0.264583"
+         x="-0.69426531"
+         y="42.552155">lastName</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:16.9333px;line-height:1;font-family:Oswald;-inkscape-font-specification:'Oswald, @wght=700';font-variation-settings:'wght' 700;text-align:start;letter-spacing:0px;text-anchor:start;vector-effect:non-scaling-stroke;fill:#000000;stroke:none;stroke-width:0.264583;stroke-linejoin:round;-inkscape-stroke:hairline"
+       x="-0.69426531"
+       y="26.393108"
+       id="text1"
+       inkscape:label="firstname"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bebas Neue';-inkscape-font-specification:'Bebas Neue';text-align:start;text-anchor:start;fill:#000000;stroke:none;stroke-width:0.264583"
+         x="-0.69426531"
+         y="26.393108">FirstName</tspan></text>
+  </g>
+</svg>
