@@ -11,6 +11,7 @@
 
 --next
 
+
 # run application
 -cmd cd bin
 -cmd node main.js
