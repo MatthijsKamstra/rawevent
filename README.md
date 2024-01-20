@@ -36,3 +36,11 @@ add `@:native('QRCode')`
 ```bash
 svgo -i nametag_v01.svg -o nametag_cleaner_v01.svg
 ```
+
+## Inkscape
+
+https://wiki.inkscape.org/wiki/Using_the_Command_Line
+
+```bash
+inkscape --version
+```
