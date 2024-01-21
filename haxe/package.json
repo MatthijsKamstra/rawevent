@@ -1,0 +1,18 @@
+{
+  "name": "rawevent",
+  "description": "",
+  "version": "1.0.0",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "svgo": "svgo -i design/nametag_v01.svg -o bin/template/nametag_cleaner_v01.svg --pretty",
+    "inkscape": "inkscape --export-type='png' design/nametag_v01.svg"
+  },
+  "dependencies": {
+    "@types/qrcode-svg": "^1.1.4",
+    "qrcode-svg": "^1.1.0"
+  },
+  "devDependencies": {
+    "dts2hx": "^0.20.0"
+  }
+}
