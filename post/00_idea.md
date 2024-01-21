@@ -45,3 +45,17 @@
   - prefill email? // nee, want dat zou iedereen kunnen doen via qr code
 - check wie inlogt en welke pagina daarbij hoort.
 -
+
+## Website
+
+- visit `https://www.rawevent.nl/`
+  - speakers
+  - call to action
+  - login
+  - about
+  - schedule
+  - Q&A
+  - ask for a consult
+  - nl / engels
+- visit `https://www.rawevent.nl/scanner`
+  - kan ook je qr scannen, maar waarom?
