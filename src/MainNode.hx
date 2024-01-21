@@ -8,9 +8,9 @@ import sys.FileSystem;
 
 class MainNode {
 	public function new() {
-		trace('MainNode');
-
+		info('Start RawEvent project');
 		init();
+		info('End RawEvent project');
 	}
 
 	function init() {
@@ -26,12 +26,11 @@ class MainNode {
 		Folder.ASSETS = Path.join([Sys.getCwd(), 'assets']);
 		Folder.EXPORT = Path.join([Sys.getCwd(), 'export']);
 		info('Folder.ROOT_FOLDER: ${Folder.ROOT_FOLDER}', 1);
-		info(Folder.BIN, 1);
-		info(Folder.DIST, 1);
+		// info(Folder.BIN, 1);
+		// info(Folder.DIST, 1);
 		info('Folder.ASSETS: ${Folder.ASSETS}', 1);
 		info('Folder.EXPORT: ${Folder.EXPORT}', 1);
 
-		// var folder = 'export/interstellar';
 		FileSystem.createDirectory(Folder.EXPORT);
 		FileSystem.createDirectory(Folder.EXPORT + '/qr');
 		FileSystem.createDirectory(Folder.EXPORT + '/tag');
@@ -46,7 +45,7 @@ class MainNode {
 		// trace(content);
 
 		var attendeesArr:Array<AST.AttendeeObj> = Json.parse(content).attendees;
-		log(attendeesArr.length);
+		// log(attendeesArr.length);
 		for (i in 0...attendeesArr.length) {
 			var _attendees = attendeesArr[i];
 			// trace(_attendees);
@@ -88,7 +87,7 @@ class MainNode {
 		var temp = (str.length - '${i}'.length);
 		var newID:String = str.substr(0, temp) + i;
 
-		var svg = '<svg>${attendee.userName}</svg>';
+		// var svg = '<svg>${attendee.userName}</svg>';
 
 		var svg = sys.io.File.getContent('template/nametag_cleaner_v01.svg');
 
@@ -110,7 +109,7 @@ class MainNode {
 
 		var svg = new QrcodeSvg({
 			// content: 'http://foobar.nl/${attendee.userName}',
-			content: '${attendee.userName}',
+			content: '${attendee._id}',
 			padding: 4,
 			width: 256,
 			height: 256,
@@ -125,6 +124,8 @@ class MainNode {
 
 		sys.io.File.saveContent('${Folder.EXPORT}/qr/${newID}_qr_${attendee.userName}.svg', svg);
 	}
+
+	// ----------------------------------------- test -----------------------------------------
 
 	function dummyQR() {
 		var qrcode = new QrcodeSvg({

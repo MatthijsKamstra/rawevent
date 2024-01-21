@@ -27,8 +27,25 @@ class HxOverrides {
 HxOverrides.__name__ = true;
 class MainNode {
 	constructor() {
-		console.log("src/MainNode.hx:11:","MainNode");
+		let t = "";
+		let _g = 0;
+		let _g1 = 0;
+		while(_g < _g1) {
+			let i = _g++;
+			t += logger_Logger.TAB;
+		}
+		process.stdout.write(Std.string("" + t + logger_Colors.BLUE + "♥ " + logger_Colors.GREEN + "Start RawEvent project" + logger_Colors.RESET));
+		process.stdout.write("\n");
 		this.init();
+		let t1 = "";
+		let _g2 = 0;
+		let _g3 = 0;
+		while(_g2 < _g3) {
+			let i = _g2++;
+			t1 += logger_Logger.TAB;
+		}
+		process.stdout.write(Std.string("" + t1 + logger_Colors.BLUE + "♥ " + logger_Colors.GREEN + "End RawEvent project" + logger_Colors.RESET));
+		process.stdout.write("\n");
 	}
 	init() {
 		this.initFolders();
@@ -56,7 +73,7 @@ class MainNode {
 		let v1 = "" + t + logger_Colors.BLUE + "♥ " + logger_Colors.GREEN + Std.string(v) + logger_Colors.RESET;
 		process.stdout.write(Std.string(v1));
 		process.stdout.write("\n");
-		let v2 = const_Folder.BIN;
+		let v2 = "Folder.ASSETS: " + const_Folder.ASSETS;
 		let tab1 = 1;
 		if(tab1 == null) {
 			tab1 = 0;
@@ -71,7 +88,7 @@ class MainNode {
 		let v3 = "" + t1 + logger_Colors.BLUE + "♥ " + logger_Colors.GREEN + Std.string(v2) + logger_Colors.RESET;
 		process.stdout.write(Std.string(v3));
 		process.stdout.write("\n");
-		let v4 = const_Folder.DIST;
+		let v4 = "Folder.EXPORT: " + const_Folder.EXPORT;
 		let tab2 = 1;
 		if(tab2 == null) {
 			tab2 = 0;
@@ -86,36 +103,6 @@ class MainNode {
 		let v5 = "" + t2 + logger_Colors.BLUE + "♥ " + logger_Colors.GREEN + Std.string(v4) + logger_Colors.RESET;
 		process.stdout.write(Std.string(v5));
 		process.stdout.write("\n");
-		let v6 = "Folder.ASSETS: " + const_Folder.ASSETS;
-		let tab3 = 1;
-		if(tab3 == null) {
-			tab3 = 0;
-		}
-		let t3 = "";
-		let _g6 = 0;
-		let _g7 = tab3;
-		while(_g6 < _g7) {
-			let i = _g6++;
-			t3 += logger_Logger.TAB;
-		}
-		let v7 = "" + t3 + logger_Colors.BLUE + "♥ " + logger_Colors.GREEN + Std.string(v6) + logger_Colors.RESET;
-		process.stdout.write(Std.string(v7));
-		process.stdout.write("\n");
-		let v8 = "Folder.EXPORT: " + const_Folder.EXPORT;
-		let tab4 = 1;
-		if(tab4 == null) {
-			tab4 = 0;
-		}
-		let t4 = "";
-		let _g8 = 0;
-		let _g9 = tab4;
-		while(_g8 < _g9) {
-			let i = _g8++;
-			t4 += logger_Logger.TAB;
-		}
-		let v9 = "" + t4 + logger_Colors.BLUE + "♥ " + logger_Colors.GREEN + Std.string(v8) + logger_Colors.RESET;
-		process.stdout.write(Std.string(v9));
-		process.stdout.write("\n");
 		sys_FileSystem.createDirectory(const_Folder.EXPORT);
 		sys_FileSystem.createDirectory(const_Folder.EXPORT + "/qr");
 		sys_FileSystem.createDirectory(const_Folder.EXPORT + "/tag");
@@ -124,21 +111,10 @@ class MainNode {
 	generateQR4Attendees() {
 		let content = js_node_Fs.readFileSync("data/attendees_00100.json",{ encoding : "utf8"});
 		let attendeesArr = JSON.parse(content).attendees;
-		let v = attendeesArr.length;
-		let t = "";
 		let _g = 0;
-		let _g1 = 0;
+		let _g1 = attendeesArr.length;
 		while(_g < _g1) {
 			let i = _g++;
-			t += logger_Logger.TAB;
-		}
-		let v1 = "" + t + logger_Colors.BLUE + "→ " + logger_Colors.WHITE + Std.string(v) + logger_Colors.RESET;
-		process.stdout.write(Std.string(v1));
-		process.stdout.write("\n");
-		let _g2 = 0;
-		let _g3 = attendeesArr.length;
-		while(_g2 < _g3) {
-			let i = _g2++;
 			let _attendees = attendeesArr[i];
 			this.createQRCodes(_attendees,i);
 			this.createTag(_attendees,i);
@@ -170,18 +146,17 @@ class MainNode {
 		let str = "00000";
 		let temp = str.length - ("" + i).length;
 		let newID = HxOverrides.substr(str,0,temp) + i;
-		let svg = "<svg>" + attendee.userName + "</svg>";
-		let svg1 = js_node_Fs.readFileSync("template/nametag_cleaner_v01.svg",{ encoding : "utf8"});
-		svg1 = StringTools.replace(svg1,"$company","" + attendee.company);
-		svg1 = StringTools.replace(svg1,"$lastname","" + attendee.lastName);
-		svg1 = StringTools.replace(svg1,"$firstname","" + attendee.firstName);
-		js_node_Fs.writeFileSync("" + const_Folder.EXPORT + "/tag/" + newID + "_tag_" + attendee.userName + ".svg",svg1);
+		let svg = js_node_Fs.readFileSync("template/nametag_cleaner_v01.svg",{ encoding : "utf8"});
+		svg = StringTools.replace(svg,"$company","" + attendee.company);
+		svg = StringTools.replace(svg,"$lastname","" + attendee.lastName);
+		svg = StringTools.replace(svg,"$firstname","" + attendee.firstName);
+		js_node_Fs.writeFileSync("" + const_Folder.EXPORT + "/tag/" + newID + "_tag_" + attendee.userName + ".svg",svg);
 	}
 	createQRCodes(attendee,i) {
 		let str = "00000";
 		let temp = str.length - ("" + i).length;
 		let newID = HxOverrides.substr(str,0,temp) + i;
-		let svg = new QrcodeSvg({ content : "" + attendee.userName, padding : 4, width : 256, height : 256, color : "#000000", background : "none", ecl : "M"}).svg();
+		let svg = new QrcodeSvg({ content : "" + attendee._id, padding : 4, width : 256, height : 256, color : "#000000", background : "none", ecl : "M"}).svg();
 		js_node_Fs.writeFileSync("" + const_Folder.EXPORT + "/qr/" + newID + "_qr_" + attendee.userName + ".svg",svg);
 	}
 	dummyQR() {
@@ -486,7 +461,6 @@ js_Boot.__toStr = ({ }).toString;
 logger_Colors.RESET = "\x1B[0m";
 logger_Colors.GREEN = "\x1B[0;32m";
 logger_Colors.BLUE = "\x1B[0;34m";
-logger_Colors.WHITE = "\x1B[0;37m";
 logger_Logger.TAB = "    ";
 MainNode.main();
 })(typeof window != "undefined" ? window : typeof global != "undefined" ? global : typeof self != "undefined" ? self : this);
