@@ -1,6 +1,18 @@
 # TODO
 
-🐞
+MVP / POC
+
+- [x] create dummy data
+- [x] create qr codes
+- [x] create name tag with personal data
+- [x] create name tag with personal data AND qr code
+- [ ] create Scribus document to create printing `.pdf`
+- [ ] add data to sqlite database
+- [x] create base angular website
+- [x] create github pages
+- [ ] add user/attendee page
+- [ ] add login page
+- [ ]
 
 ## Add content to index.html
 
@@ -21,6 +33,3 @@
 ## Start developement
 
 - [ ] `ng serve --open`
-
-
-
