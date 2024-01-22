@@ -3,9 +3,7 @@
 	with one of the constructors, then either generate the QR code svg as a
 	string with `.svg(...)` or save it to a file with `.save(...)`.
 **/
-@:jsRequire("qrcode-svg")
-// @:native('QRCode')
-extern class QrcodeSvg {
+@:jsRequire("qrcode-svg") extern class QrcodeSvg {
 	/**
 		Create a QRCode with the default options and the passed content.
 	**/

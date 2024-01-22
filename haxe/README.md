@@ -7,6 +7,7 @@ npm i qrcode-svg
 ```
 
 ```bash
+haxelib install hxnodejs
 npm install dts2hx --save-dev
 npm install qrcode-svg --save
 npm install @types/qrcode-svg --save

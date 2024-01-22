@@ -1,0 +1,13 @@
+-cp src
+-main MainNeko
+-neko bin/main.n
+# -debug
+-dce full
+-D no-deprecation-warnings
+
+--next
+
+# run application
+-cmd cd bin
+# -cmd nekotools boot bin/main.n
+-cmd neko main.n
