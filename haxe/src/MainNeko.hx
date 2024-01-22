@@ -37,8 +37,8 @@ class MainNeko {
 			email TEXT
 		);');
 
-		var content = sys.io.File.getContent('data/attendees_00100.json');
-		// var content = sys.io.File.getContent('data/attendees_00176.json');
+		// var content = sys.io.File.getContent('data/attendees_00100.json');
+		var content = sys.io.File.getContent('data/attendees_00176.json');
 		// trace(content);
 
 		var attendeesArr:Array<AST.AttendeeObj> = Json.parse(content).attendees;
