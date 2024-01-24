@@ -124,6 +124,9 @@ class MainNode {
 	}
 	convertPNG2JSON() {
 		let json = { };
+		let _w = 78;
+		let _h = 108;
+		let _bleed = 3;
 		json["pages"] = [];
 		let directory = "export/combo";
 		let _g = 0;
@@ -135,10 +138,20 @@ class MainNode {
 			if(!sys_FileSystem.isDirectory(path)) {
 				if(path.indexOf(".png") != -1) {
 					let arr = Reflect.field(json,"pages");
-					arr.push(path);
+					let pageObj = { left : { }, right : { _alias : "test", images : [{ path : "" + path, x : { "unit" : "mm", "value" : -_bleed}, y : { "unit" : "mm", "value" : -_bleed}, width : { "unit" : "mm", "value" : 2 * _bleed + _w}, height : { "unit" : "mm", "value" : 2 * _bleed + _h}}]}};
+					arr.push(pageObj);
 				}
 			}
 		}
+		let t = "";
+		let _g2 = 0;
+		let _g3 = 0;
+		while(_g2 < _g3) {
+			let i = _g2++;
+			t += logger_Logger.TAB;
+		}
+		process.stdout.write(Std.string("" + t + logger_Colors.BLUE + "→ " + logger_Colors.WHITE + "write json" + logger_Colors.RESET));
+		process.stdout.write("\n");
 		js_node_Fs.writeFileSync("" + const_Folder.EXPORT + "/export_scribus.json",JSON.stringify(json,null,"\t"));
 	}
 	combineQrAndTag(attendee,i) {

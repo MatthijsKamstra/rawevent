@@ -88,6 +88,10 @@ class MainNode {
 	function convertPNG2JSON() {
 		var json = {};
 
+		var _w = 78; // mm
+		var _h = 108; // mm
+		var _bleed = 3; // mm
+
 		Reflect.setField(json, 'pages', []);
 		var directory = 'export/combo';
 		for (file in sys.FileSystem.readDirectory(directory)) {
@@ -100,10 +104,28 @@ class MainNode {
 					var arr = Reflect.field(json, 'pages');
 					// "export/combo/00000_combo_slyvia_de_vries.png",
 
-					arr.push(path);
+					var pageObj = {
+						left: {},
+						right: {
+							_alias: "test",
+							images: [
+								{
+									path: '${path}',
+									x: {"unit": "mm", "value": -_bleed},
+									y: {"unit": "mm", "value": -_bleed},
+									width: {"unit": "mm", "value": (2 * _bleed) + _w},
+									height: {"unit": "mm", "value": (2 * _bleed) + _h}
+								}
+							]
+						}
+					}
+
+					arr.push(pageObj);
 				}
 			}
 		}
+
+		log('write json');
 
 		File.saveContent('${Folder.EXPORT}/export_scribus.json', Json.stringify(json, null, '\t'));
 	}

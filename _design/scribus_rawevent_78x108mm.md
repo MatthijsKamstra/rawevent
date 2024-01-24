@@ -25,14 +25,7 @@
 	- bleeds-right: 3mm
 	- bleeds-top: 3mm
 	- bleeds-bottom: 3mm
-- Total pages: 5 (8-8)
-- Total images: 7
+- Total pages: 100 (8-8)
+- Total images: 100
 - Total text: 0
-- Total errors: 7
-	- Image file doesnt exist (/Users/matthijskamstra/Documents/GIT/rawevent/_design/assets/png/a4_green.png)
-	- Image file doesnt exist (/Users/matthijskamstra/Documents/GIT/rawevent/_design/assets/png/a4_gray.png)
-	- Image file doesnt exist (/Users/matthijskamstra/Documents/GIT/rawevent/_design/assets/png/a4_blue.png)
-	- Image file doesnt exist (/Users/matthijskamstra/Documents/GIT/rawevent/_design/assets/png/a4_green.png)
-	- Image file doesnt exist (/Users/matthijskamstra/Documents/GIT/rawevent/_design/assets/png/a4_red.png)
-	- Image file doesnt exist (/Users/matthijskamstra/Documents/GIT/rawevent/_design/assets/png/a4_green.png)
-	- Image file doesnt exist (/Users/matthijskamstra/Documents/GIT/rawevent/_design/assets/png/a4_red.png)
+- Total errors: 0
