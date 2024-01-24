@@ -15,6 +15,8 @@ MVP / POC
 - [ ] add after login attendee page
 - [ ] ....
 
+Vergelijkbare oplossing aan de website kant: https://www.yellenge.nl/succesvol-event/
+
 ## Add content to index.html
 
 - [ ] change title in `src/index.html`

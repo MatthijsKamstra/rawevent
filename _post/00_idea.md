@@ -89,3 +89,16 @@
     - gesproken met aanvinken (connectie?)
 
 - visit `https://www.rawevent.nl/login` (Azure AD) login
+
+---
+
+## order posts
+
+- 01 Start
+- 02 Dummy data
+- 03 QR
+- 04 Event Badge
+- 05 Combine QR and Event Badge
+- 06 Print
+- 07 Website
+- 08 UX (hoe ga je de site door)

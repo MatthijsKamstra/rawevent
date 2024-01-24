@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "svgo": "svgo -i design/nametag_v01.svg -o bin/template/nametag_cleaner_v01.svg --pretty",
-    "inkscape": "inkscape --export-type='png' design/nametag_v01.svg"
+    "inkscape": "inkscape --export-type='png' ../_design/nametag_v01.svg",
+    "inkscape.test": "inkscape --export-type='png' bin/test.svg"
   },
   "dependencies": {
     "@types/qrcode-svg": "^1.1.4",

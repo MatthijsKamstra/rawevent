@@ -1,0 +1,38 @@
+# Scribus data
+
+- Document:
+	- width: 78mm
+	- height: 108mm
+	- author: Matthijs Kamstra
+	- title: Event Badges overzicht
+	- description: Alle Event Badges
+	- language: nl
+	- pageName: Portrait
+	- guideSnap: true
+	- guideLocked: true
+- Margins:
+	- margins-left: 10mm
+	- margins-right: 10mm
+	- margins-top: 10mm
+	- margins-bottom: 10mm
+- Guides:
+	- guides-left: 10mm
+	- guides-right: 10mm
+	- guides-top: 10mm
+	- guides-bottom: 10mm
+- Bleeds:
+	- bleeds-left: 3mm
+	- bleeds-right: 3mm
+	- bleeds-top: 3mm
+	- bleeds-bottom: 3mm
+- Total pages: 5 (8-8)
+- Total images: 7
+- Total text: 0
+- Total errors: 7
+	- Image file doesnt exist (/Users/matthijskamstra/Documents/GIT/rawevent/_design/assets/png/a4_green.png)
+	- Image file doesnt exist (/Users/matthijskamstra/Documents/GIT/rawevent/_design/assets/png/a4_gray.png)
+	- Image file doesnt exist (/Users/matthijskamstra/Documents/GIT/rawevent/_design/assets/png/a4_blue.png)
+	- Image file doesnt exist (/Users/matthijskamstra/Documents/GIT/rawevent/_design/assets/png/a4_green.png)
+	- Image file doesnt exist (/Users/matthijskamstra/Documents/GIT/rawevent/_design/assets/png/a4_red.png)
+	- Image file doesnt exist (/Users/matthijskamstra/Documents/GIT/rawevent/_design/assets/png/a4_green.png)
+	- Image file doesnt exist (/Users/matthijskamstra/Documents/GIT/rawevent/_design/assets/png/a4_red.png)

@@ -15,8 +15,14 @@ class MainNode {
 
 	function init() {
 		initFolders();
-		dummyQR();
+		testQRCodeGeneration();
 		generateQR4Attendees();
+		// convert combo from svg to png
+		// will take a while
+		// convertSVG2PNG();
+
+		// convert png to json file
+		convertPNG2JSON();
 	}
 
 	function initFolders() {
@@ -39,9 +45,9 @@ class MainNode {
 
 	function generateQR4Attendees() {
 		// read the file
-		// var content = sys.io.File.getContent('data/attendees_00010.json');
-		var content = sys.io.File.getContent('data/attendees_00100.json');
-		// var content = sys.io.File.getContent('data/attendees_00176.json');
+		// var content = File.getContent('data/attendees_00010.json');
+		var content = File.getContent('data/attendees_00100.json');
+		// var content = File.getContent('data/attendees_00176.json');
 		// trace(content);
 
 		var attendeesArr:Array<AST.AttendeeObj> = Json.parse(content).attendees;
@@ -55,13 +61,60 @@ class MainNode {
 		}
 	}
 
+	function convertSVG2PNG() {
+		// bin/export/combo/00000_combo_slyvia_de_vries.svg
+
+		// check if ffmpeg is installed
+		// Sys.command('ffmpeg', ['-version']);
+		// check for Inkscape
+		// Sys.command('inkscape', ['--version']);
+		// Sys.command('inkscape', ["--export-type png", "export/combo/00000_combo_slyvia_de_vries.svg"]);
+		Sys.command('inkscape', ["--export-type", "png", "export/combo/00097_combo_angle_smit.svg", "-w", "1024"]);
+
+		var directory = 'export/combo';
+		for (file in sys.FileSystem.readDirectory(directory)) {
+			var path = haxe.io.Path.join([directory, file]);
+			if (!sys.FileSystem.isDirectory(path)) {
+				// trace("file found: " + path);
+				// do something with file
+				if (path.indexOf('.svg') != -1) {
+					// log(path);
+					Sys.command('inkscape', ["--export-type", "png", '${path}', "-w", "1024"]);
+				}
+			}
+		}
+	}
+
+	function convertPNG2JSON() {
+		var json = {};
+
+		Reflect.setField(json, 'pages', []);
+		var directory = 'export/combo';
+		for (file in sys.FileSystem.readDirectory(directory)) {
+			var path = haxe.io.Path.join([directory, file]);
+			if (!sys.FileSystem.isDirectory(path)) {
+				// trace("file found: " + path);
+				// do something with file
+				if (path.indexOf('.png') != -1) {
+					// log(path);
+					var arr = Reflect.field(json, 'pages');
+					// "export/combo/00000_combo_slyvia_de_vries.png",
+
+					arr.push(path);
+				}
+			}
+		}
+
+		File.saveContent('${Folder.EXPORT}/export_scribus.json', Json.stringify(json, null, '\t'));
+	}
+
 	function combineQrAndTag(attendee:AttendeeObj, i:Int) {
 		var str = '00000';
 		var temp = (str.length - '${i}'.length);
 		var newID:String = str.substr(0, temp) + i;
 
-		var tag = sys.io.File.getContent('${Folder.EXPORT}/tag/${newID}_tag_${attendee.userName}.svg');
-		var qr = sys.io.File.getContent('${Folder.EXPORT}/qr/${newID}_qr_${attendee.userName}.svg');
+		var tag = File.getContent('${Folder.EXPORT}/tag/${newID}_tag_${attendee.userName}.svg');
+		var qr = File.getContent('${Folder.EXPORT}/qr/${newID}_qr_${attendee.userName}.svg');
 
 		var qrArr = qr.split('\n');
 
@@ -77,9 +130,9 @@ class MainNode {
 
 		// replace and guess...
 		var combo = tag;
-		combo = combo.replace('</svg>', '<g	id="qrcode" transform="matrix(0.26682031,0,0,0.26682031,4.847,35.24044)">${rects}</g></svg>');
+		combo = combo.replace('</svg>', '<g id="qrcode" transform="matrix(0.26682031,0,0,0.26682031,4.847,35.24044)">${rects}</g></svg>');
 
-		sys.io.File.saveContent('${Folder.EXPORT}/combo/${newID}_combo_${attendee.userName}.svg', combo);
+		File.saveContent('${Folder.EXPORT}/combo/${newID}_combo_${attendee.userName}.svg', combo);
 	}
 
 	function createTag(attendee:AttendeeObj, i:Int) {
@@ -89,13 +142,13 @@ class MainNode {
 
 		// var svg = '<svg>${attendee.userName}</svg>';
 
-		var svg = sys.io.File.getContent('template/nametag_cleaner_v01.svg');
+		var svg = File.getContent('template/nametag_cleaner_v01.svg');
 
 		svg = svg.replace("$company", '${attendee.company}');
 		svg = svg.replace("$lastname", '${attendee.lastName}');
 		svg = svg.replace("$firstname", '${attendee.firstName}');
 
-		sys.io.File.saveContent('${Folder.EXPORT}/tag/${newID}_tag_${attendee.userName}.svg', svg);
+		File.saveContent('${Folder.EXPORT}/tag/${newID}_tag_${attendee.userName}.svg', svg);
 	}
 
 	function createQRCodes(attendee:AttendeeObj, i:Int) {
@@ -122,14 +175,15 @@ class MainNode {
 			ecl: "M",
 		}).svg();
 
-		sys.io.File.saveContent('${Folder.EXPORT}/qr/${newID}_qr_${attendee.userName}.svg', svg);
+		File.saveContent('${Folder.EXPORT}/qr/${newID}_qr_${attendee.userName}.svg', svg);
 	}
 
 	// ----------------------------------------- test -----------------------------------------
 
-	function dummyQR() {
+	function testQRCodeGeneration() {
+		log('testQRCodeGeneration');
 		var qrcode = new QrcodeSvg({
-			content: "http://github.com/",
+			content: "Matthijs de gekste!",
 			padding: 4,
 			width: 256,
 			height: 256,
@@ -137,29 +191,26 @@ class MainNode {
 			background: "#ffffff",
 			ecl: "M",
 		});
-		qrcode.save("sample.svg", function(error) {
+		qrcode.save("test.svg", function(error) {
 			if (error != null)
 				throw error;
 			console.log("Done!");
 		});
-
-		// var svg = new QRCode("Hello World!").svg();
-		// console.log(svg);
-
-		// untyped __js__('// [nodejs] comment');
-		// js.Node.console.log('js.Node.console.log');
-		// untyped ('// [${TARGET}] simple untyped');
-		// Syntax.code('# [python] comment');
-
-		// var svg = Syntax.code('new QRCode("Hello World!").svg()');
-		// console.log(svg);
-
-		// console.log(new QrcodeSvg('hello').svg());
 	}
+
+	// var svg = new QRCode("Hello World!").svg();
+	// console.log(svg);
+	// untyped __js__('// [nodejs] comment');
+	// js.Node.console.log('js.Node.console.log');
+	// untyped ('// [${TARGET}] simple untyped');
+	// Syntax.code('# [python] comment');
+	// var svg = Syntax.code('new QRCode("Hello World!").svg()');
+	// console.log(svg);
+	// console.log(new QrcodeSvg('hello').svg());
 
 	function dummyWrite() {
 		var str:String = 'Hello World!\nWritten on: ' + Date.now().toString();
-		sys.io.File.saveContent('hello.txt', str);
+		File.saveContent('hello.txt', str);
 	}
 
 	static public function main() {

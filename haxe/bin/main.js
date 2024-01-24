@@ -49,8 +49,9 @@ class MainNode {
 	}
 	init() {
 		this.initFolders();
-		this.dummyQR();
+		this.testQRCodeGeneration();
 		this.generateQR4Attendees();
+		this.convertPNG2JSON();
 	}
 	initFolders() {
 		const_Folder.ROOT_FOLDER = process.cwd();
@@ -121,6 +122,25 @@ class MainNode {
 			this.combineQrAndTag(_attendees,i);
 		}
 	}
+	convertPNG2JSON() {
+		let json = { };
+		json["pages"] = [];
+		let directory = "export/combo";
+		let _g = 0;
+		let _g1 = js_node_Fs.readdirSync(directory);
+		while(_g < _g1.length) {
+			let file = _g1[_g];
+			++_g;
+			let path = haxe_io_Path.join([directory,file]);
+			if(!sys_FileSystem.isDirectory(path)) {
+				if(path.indexOf(".png") != -1) {
+					let arr = Reflect.field(json,"pages");
+					arr.push(path);
+				}
+			}
+		}
+		js_node_Fs.writeFileSync("" + const_Folder.EXPORT + "/export_scribus.json",JSON.stringify(json,null,"\t"));
+	}
 	combineQrAndTag(attendee,i) {
 		let str = "00000";
 		let temp = str.length - ("" + i).length;
@@ -139,7 +159,7 @@ class MainNode {
 			}
 		}
 		let combo = tag;
-		combo = StringTools.replace(combo,"</svg>","<g\tid=\"qrcode\" transform=\"matrix(0.26682031,0,0,0.26682031,4.847,35.24044)\">" + rects + "</g></svg>");
+		combo = StringTools.replace(combo,"</svg>","<g id=\"qrcode\" transform=\"matrix(0.26682031,0,0,0.26682031,4.847,35.24044)\">" + rects + "</g></svg>");
 		js_node_Fs.writeFileSync("" + const_Folder.EXPORT + "/combo/" + newID + "_combo_" + attendee.userName + ".svg",combo);
 	}
 	createTag(attendee,i) {
@@ -159,9 +179,18 @@ class MainNode {
 		let svg = new QrcodeSvg({ content : "" + attendee._id, padding : 4, width : 256, height : 256, color : "#000000", background : "none", ecl : "M"}).svg();
 		js_node_Fs.writeFileSync("" + const_Folder.EXPORT + "/qr/" + newID + "_qr_" + attendee.userName + ".svg",svg);
 	}
-	dummyQR() {
-		let qrcode = new QrcodeSvg({ content : "http://github.com/", padding : 4, width : 256, height : 256, color : "#000000", background : "#ffffff", ecl : "M"});
-		qrcode.save("sample.svg",function(error) {
+	testQRCodeGeneration() {
+		let t = "";
+		let _g = 0;
+		let _g1 = 0;
+		while(_g < _g1) {
+			let i = _g++;
+			t += logger_Logger.TAB;
+		}
+		process.stdout.write(Std.string("" + t + logger_Colors.BLUE + "→ " + logger_Colors.WHITE + "testQRCodeGeneration" + logger_Colors.RESET));
+		process.stdout.write("\n");
+		let qrcode = new QrcodeSvg({ content : "Matthijs de gekste!", padding : 4, width : 256, height : 256, color : "#000000", background : "#ffffff", ecl : "M"});
+		qrcode.save("test.svg",function(error) {
 			if(error != null) {
 				throw error;
 			}
@@ -175,6 +204,16 @@ class MainNode {
 MainNode.__name__ = true;
 Math.__name__ = true;
 var QrcodeSvg = require("qrcode-svg");
+class Reflect {
+	static field(o,field) {
+		try {
+			return o[field];
+		} catch( _g ) {
+			return null;
+		}
+	}
+}
+Reflect.__name__ = true;
 class Std {
 	static string(s) {
 		return js_Boot.__string_rec(s,"");
@@ -426,6 +465,13 @@ class logger_Logger {
 }
 logger_Logger.__name__ = true;
 class sys_FileSystem {
+	static isDirectory(path) {
+		try {
+			return js_node_Fs.statSync(path).isDirectory();
+		} catch( _g ) {
+			return false;
+		}
+	}
 	static createDirectory(path) {
 		try {
 			js_node_Fs.mkdirSync(path);
@@ -461,6 +507,7 @@ js_Boot.__toStr = ({ }).toString;
 logger_Colors.RESET = "\x1B[0m";
 logger_Colors.GREEN = "\x1B[0;32m";
 logger_Colors.BLUE = "\x1B[0;34m";
+logger_Colors.WHITE = "\x1B[0;37m";
 logger_Logger.TAB = "    ";
 MainNode.main();
 })(typeof window != "undefined" ? window : typeof global != "undefined" ? global : typeof self != "undefined" ? self : this);
