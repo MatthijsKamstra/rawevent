@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -22,6 +22,8 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
+import { LoginComponent } from './components/login/login.component';
+import { LoginDropdownComponent } from './elements/login-dropdown/login-dropdown.component';
 import { SpeakersPageComponent } from './pages/speakers-page/speakers-page.component';
 import { ColorsComponent } from './pages/styleguide/colors/colors.component';
 import { StyleguideComponent } from './pages/styleguide/styleguide.component';
@@ -51,14 +53,17 @@ import { DebugDirective } from './shared/directives/debug.directive';
     IconsComponent,
     DebugDirective,
     UserPageComponent,
-    HeroVisualComponent
+    HeroVisualComponent,
+    LoginDropdownComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
