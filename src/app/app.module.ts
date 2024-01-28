@@ -10,18 +10,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeroVideoRawGeniusComponent } from './components/hero-video-rawgenius/hero-video-rawgenius.component';
-import { HeroComponent } from './components/hero/hero.component';
+
 import { NavComponent } from './components/nav/nav.component';
 import { Btn2topComponent } from './elements/btn2top/btn2top.component';
 import { IconsComponent } from './elements/icons/icons.component';
 import { ProfileDropdownComponent } from './elements/profile-dropdown/profile-dropdown.component';
 // import { TranslationDropdownComponent } from './elements/translation-dropdown/translation-dropdown.component';
+import { HeroVisualComponent } from './components/hero-visual/hero-visual.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
-import { ProductsInfoPageComponent } from './pages/products-info-page/products-info-page.component';
-import { ProductsPageComponent } from './pages/products-page/products-page.component';
+
 import { SpeakersPageComponent } from './pages/speakers-page/speakers-page.component';
 import { ColorsComponent } from './pages/styleguide/colors/colors.component';
 import { StyleguideComponent } from './pages/styleguide/styleguide.component';
@@ -32,15 +32,13 @@ import { DebugDirective } from './shared/directives/debug.directive';
   declarations: [
     AppComponent,
     NavComponent,
-    HeroComponent,
     FooterComponent,
     IconsComponent,
     HomePageComponent,
     AboutPageComponent,
     DashboardPageComponent,
     SpeakersPageComponent,
-    ProductsPageComponent,
-    ProductsInfoPageComponent,
+
     NotFoundPageComponent,
     StyleguideComponent,
     ColorsComponent,
@@ -53,6 +51,7 @@ import { DebugDirective } from './shared/directives/debug.directive';
     IconsComponent,
     DebugDirective,
     UserPageComponent,
+    HeroVisualComponent
   ],
   imports: [
     BrowserModule,

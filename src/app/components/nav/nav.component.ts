@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Routes } from "@angular/router";
 import { defaultRoutes } from "../../routes/default.route";
-import { productRoutes } from "../../routes/product.route";
 import { testRoutes } from "../../routes/test.route";
 
 import { SecurityService } from 'src/app/services/security.service';
@@ -19,7 +18,6 @@ export class NavComponent implements OnInit {
 
   isHiddenIsProduction: boolean = environment.production;
 
-  productRoutes: Routes = productRoutes;
   defaultRoutes: Routes = defaultRoutes;
   testRoutes: Routes = testRoutes;
   pagesRoutes: Routes = pagesRoutes;

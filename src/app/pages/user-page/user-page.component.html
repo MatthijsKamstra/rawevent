@@ -1,3 +1,6 @@
+<app-hero-visual img="https://picsum.photos/id/20/1024/400/"></app-hero-visual>
+
+
 <section class="container">
 	<h2>{{this.title}}</h2>
 	<h3>User id: {{this.id}}</h3>
@@ -16,11 +19,21 @@
 	</div>
 
 	<div *ngIf="this.user">
-		<p>FirstName: {{this.user.firstName}}</p>
-		<p>LastName: {{this.user.lastName}}</p>
-		<p>Company: {{this.user.company}}</p>
+		<h2>Info attendee</h2>
+		<p>
+			FirstName: {{this.user.firstName}}<br />
+			LastName: {{this.user.lastName}}<br />
+			Company: {{this.user.company}}
+		</p>
 	</div>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ex orci. Phasellus magna ante, ullamcorper
+
+
+
+	<h3>Lorem ipsum</h3>
+	<p>
+
+
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ex orci. Phasellus magna ante, ullamcorper
 		non
 		leo in, fermentum efficitur felis. Donec vitae mattis erat. Sed vel odio arcu. Praesent porta nulla et
 		sapien

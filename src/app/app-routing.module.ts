@@ -8,11 +8,9 @@ import { NotFoundPageComponent } from "./pages/not-found-page/not-found-page.com
 
 import { defaultRoutes } from "./routes/default.route";
 import { pagesRoutes } from "./routes/pages.route";
-import { productRoutes } from "./routes/product.route";
 import { testRoutes } from "./routes/test.route";
 import { UserRoutes } from "./routes/user.route";
 
-const PRODUCT_ROUTES = [...productRoutes];
 const DEFAULT_ROUTES = [...defaultRoutes];
 const TEST_ROUTES = [...testRoutes];
 const PAGES_ROUTES = [...pagesRoutes];
@@ -23,7 +21,6 @@ const routes: Routes = [
   // { path: "home", title: "Home", component: HomePageComponent },
   // { path: "about", title: "About", component: AboutPageComponent },
   // { path: "dashboard", title: "Dashboard", component: DashboardPageComponent },
-  ...PRODUCT_ROUTES,
   ...DEFAULT_ROUTES,
   ...TEST_ROUTES,
   ...PAGES_ROUTES,
