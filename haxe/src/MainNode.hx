@@ -22,7 +22,35 @@ class MainNode {
 		// convertSVG2PNG();
 
 		// convert png to json file
-		convertPNG2JSON();
+		convertPNG2JSONScribis();
+
+		// convert json to fake database;
+		convertFakeDatabase();
+	}
+
+	function convertFakeDatabase() {
+		log('convertFakeDatabase');
+		// var content = File.getContent('data/attendees_00010.json');
+		// var content = File.getContent('data/attendees_00100.json');
+		var content = File.getContent('data/attendees_00176.json');
+		// trace(content);
+		var json = {
+			fakedatabase: {}
+		};
+		var attendeesArr:Array<AST.AttendeeObj> = Json.parse(content).attendees;
+		// log(attendeesArr.length);
+		for (i in 0...attendeesArr.length) {
+			var _attendees = attendeesArr[i];
+			// trace(_attendees);
+
+			var obj = Reflect.field(json, 'fakedatabase');
+
+			Reflect.setField(obj, '${_attendees._id}', _attendees);
+		}
+
+		log('write json');
+
+		File.saveContent('${Folder.EXPORT}/fake_database.json', Json.stringify(json, null, '\t'));
 	}
 
 	function initFolders() {
@@ -85,7 +113,7 @@ class MainNode {
 		}
 	}
 
-	function convertPNG2JSON() {
+	function convertPNG2JSONScribis() {
 		var json = {};
 
 		var _w = 78; // mm

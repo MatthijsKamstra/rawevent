@@ -51,7 +51,40 @@ class MainNode {
 		this.initFolders();
 		this.testQRCodeGeneration();
 		this.generateQR4Attendees();
-		this.convertPNG2JSON();
+		this.convertPNG2JSONScribis();
+		this.convertFakeDatabase();
+	}
+	convertFakeDatabase() {
+		let t = "";
+		let _g = 0;
+		let _g1 = 0;
+		while(_g < _g1) {
+			let i = _g++;
+			t += logger_Logger.TAB;
+		}
+		process.stdout.write(Std.string("" + t + logger_Colors.BLUE + "→ " + logger_Colors.WHITE + "convertFakeDatabase" + logger_Colors.RESET));
+		process.stdout.write("\n");
+		let content = js_node_Fs.readFileSync("data/attendees_00176.json",{ encoding : "utf8"});
+		let json = { fakedatabase : { }};
+		let attendeesArr = JSON.parse(content).attendees;
+		let _g2 = 0;
+		let _g3 = attendeesArr.length;
+		while(_g2 < _g3) {
+			let i = _g2++;
+			let _attendees = attendeesArr[i];
+			let obj = Reflect.field(json,"fakedatabase");
+			obj["" + _attendees._id] = _attendees;
+		}
+		let t1 = "";
+		let _g4 = 0;
+		let _g5 = 0;
+		while(_g4 < _g5) {
+			let i = _g4++;
+			t1 += logger_Logger.TAB;
+		}
+		process.stdout.write(Std.string("" + t1 + logger_Colors.BLUE + "→ " + logger_Colors.WHITE + "write json" + logger_Colors.RESET));
+		process.stdout.write("\n");
+		js_node_Fs.writeFileSync("" + const_Folder.EXPORT + "/fake_database.json",JSON.stringify(json,null,"\t"));
 	}
 	initFolders() {
 		const_Folder.ROOT_FOLDER = process.cwd();
@@ -122,7 +155,7 @@ class MainNode {
 			this.combineQrAndTag(_attendees,i);
 		}
 	}
-	convertPNG2JSON() {
+	convertPNG2JSONScribis() {
 		let json = { };
 		let _w = 78;
 		let _h = 108;
