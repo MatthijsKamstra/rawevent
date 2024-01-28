@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { Redirects } from 'src/app/shared/constants/redirects';
+import { IUser } from 'src/app/shared/interfaces/i-user';
 
 @Component({
   selector: 'app-user-page',
@@ -12,6 +13,8 @@ export class UserPageComponent implements OnInit {
 
   title: string = 'User';
   id!: string;
+
+  user!: IUser;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,6 +35,8 @@ export class UserPageComponent implements OnInit {
         } else {
           console.log('known');
           console.log(value);
+
+          this.user = value;
 
         }
       },

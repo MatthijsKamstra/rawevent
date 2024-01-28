@@ -2,10 +2,27 @@
 	<h2>{{this.title}}</h2>
 	<h3>User id: {{this.id}}</h3>
 	<div debug>
-		<a href="./user/2b40c6d0-9426-40a6-8479-6f274c64ded7">2b40c6d0-9426-40a6-8479-6f274c64ded7</a>
+		<div class="hstack gap-2">
+			<a class="btn btn-dark"
+				href="./user/2b40c6d0-9426-40a6-8479-6f274c64ded7">2b40c6d0-9426-40a6-8479-6f274c64ded7</a>
+
+			<a class="btn btn-dark"
+				href="./user/2b40c6d0-0729-45b2-83d8-e701e71f686d">2b40c6d0-0729-45b2-83d8-e701e71f686d</a>
+
+			<a class="btn btn-dark"
+				href="./user/2b40c6d0-2aaa-4af4-b3fa-1459b3207567">2b40c6d0-2aaa-4af4-b3fa-1459b3207567</a>
+
+		</div>
 	</div>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ex orci. Phasellus magna ante, ullamcorper non
-		leo in, fermentum efficitur felis. Donec vitae mattis erat. Sed vel odio arcu. Praesent porta nulla et sapien
+	<div *ngIf="this.user">
+		<p>FirstName: {{this.user.firstName}}</p>
+		<p>LastName: {{this.user.lastName}}</p>
+		<p>Company: {{this.user.company}}</p>
+	</div>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ex orci. Phasellus magna ante, ullamcorper
+		non
+		leo in, fermentum efficitur felis. Donec vitae mattis erat. Sed vel odio arcu. Praesent porta nulla et
+		sapien
 		interdum, id placerat leo semper. Mauris eget consequat sem. Suspendisse tincidunt et est sit amet laoreet.
 		Vivamus nec rutrum enim. In malesuada nibh non tempor imperdiet. In dignissim, felis in tincidunt consequat,
 		metus augue euismod diam, ut eleifend turpis nisi vitae ipsum. Nulla mattis, magna at convallis mattis, sem
