@@ -1,0 +1,41 @@
+<div class="dropdown">
+	<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+		data-testid="app-profile-dropdown">
+		<app-icons icon="profile"></app-icons> {{this.title}}
+	</button>
+	<ul class="dropdown-menu dropdown-menu-end">
+		<!-- <li><a class="dropdown-item" routerLink="/home">Home</a></li> -->
+		<li>
+			<p class="p-3 text-body-secondary pb-0">
+				Hello {{this.username}}!
+			</p>
+			<hr class="dropdown-divider">
+		</li>
+		<li>
+			<a class="dropdown-item" routerLink="/dashboard">Dashboard</a>
+		</li>
+		<li>
+			<a class="dropdown-item" routerLink="/about" data-testid="app-profile-dropdown-about">
+				About
+			</a>
+		</li>
+
+		<li><a class="dropdown-item" routerLink="/help">Help</a></li>
+		<li><a class="dropdown-item" routerLink="/settings">Settings</a></li>
+
+		<li *ngIf="!isHiddenIsProduction">
+			<hr class="dropdown-divider">
+			<span class="px-3 text-body-secondary">
+				<!-- <app-is-local></app-is-local> -->
+			</span>
+		</li>
+		<li>
+			<hr class="dropdown-divider">
+		</li>
+		<li>
+			<a class="dropdown-item" routerLink="/logout" data-testid="app-profile-dropdown-click">
+				Log off
+			</a>
+		</li>
+	</ul>
+</div>

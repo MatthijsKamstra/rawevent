@@ -1,11 +1,12 @@
 // Set up layout to push the Footer to the bottom
 html,
 body {
-  height: 100%;
-  background-color: white;
+	height: 100%;
+	//   background-color: white;
+	// background-color: silver;
 }
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 // reset blue focus color
@@ -14,15 +15,15 @@ button:focus,
 input:focus,
 textarea:focus,
 select:focus {
-  outline: none !important;
-  border-color: $black;
-  box-shadow: 0 0 0 0rem rgba(1, 105, 200, 0.25) !important; // override bootstrap colors/box-shadow
+	outline: none !important;
+	border-color: $black;
+	box-shadow: 0 0 0 0rem rgba(1, 105, 200, 0.25) !important; // override bootstrap colors/box-shadow
 }
 
 // hmmmm
 .hidden {
-  visibility: hidden;
+	visibility: hidden;
 }
 .display-none {
-  display: none !important;
+	display: none !important;
 }

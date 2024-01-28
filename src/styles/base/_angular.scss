@@ -2,7 +2,7 @@
 // problem: angular uses elements like `app-authorised-layout` which is impossible to style with css by searching for `app-`
 // to have more controle over it, we use this
 
-$component-list: "root", "authorised-layout";
+$component-list: "root", "authorised-layout", "public-layout", "fullscreen-layout";
 $prefix: "app";
 
 @each $c in $component-list {
@@ -16,9 +16,11 @@ $prefix: "app";
 		flex-direction: column;
 		main {
 			flex-shrink: 0;
-			margin-top: 60px;
+			margin-top: 55px;
 		}
 		app-footer {
+			// border: 10px solid gold;
+			// display: block;
 			margin-top: auto !important;
 		}
 	}
