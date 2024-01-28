@@ -26,6 +26,7 @@ import { SpeakersPageComponent } from './pages/speakers-page/speakers-page.compo
 import { ColorsComponent } from './pages/styleguide/colors/colors.component';
 import { StyleguideComponent } from './pages/styleguide/styleguide.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
+import { DebugDirective } from './shared/directives/debug.directive';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { UserPageComponent } from './pages/user-page/user-page.component';
     ProfileDropdownComponent,
     // TranslationDropdownComponent,
     IconsComponent,
+    DebugDirective,
     UserPageComponent,
   ],
   imports: [

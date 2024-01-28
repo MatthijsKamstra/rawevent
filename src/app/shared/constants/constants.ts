@@ -12,7 +12,7 @@ export class Constants {
 	public static configApi: string = '/settings/application';
 	public static settingsApi: string = '/settings';
 	public static helpApi: string = '/help';
-	public static apiUsers: string = '/users/:id/';
+	public static apiUsers: string = '/user/:id/';
 	static loginURL: any;
 	static logoutURL: any;
 

@@ -14,7 +14,7 @@ export class ProfileDropdownComponent implements OnInit {
 
 	protected TITLE: string = 'Profile';
 	title: string = this.TITLE;
-	username: string = '';
+	userName: string = '';
 
 	isFeatureDashboard: boolean = false;
 	isNetManagementOrganisation: boolean = false;
@@ -34,7 +34,7 @@ export class ProfileDropdownComponent implements OnInit {
 	getUser() {
 		const user: IUser | null = this.securityService.getUser();
 		if (user !== null) {
-			this.username = user.username;
+			this.userName = user.userName;
 		}
 	}
 

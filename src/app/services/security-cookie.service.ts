@@ -17,7 +17,8 @@ export class SecurityCookieService {
 	storeUser(user: IUser): void {
 		this.currentUser = user;
 		this.setSessionStorageUser(JSON.stringify(user));
-		this.setCurrentToken(user.token);
+		if (user.token)
+			this.setCurrentToken(user.token);
 	};
 
 	removeUser() {

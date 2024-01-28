@@ -95,28 +95,12 @@ export class SecurityService {
   }
 
   /**
-   * is this user allowed to manage more then one organisation
-   * empty array says NOOOO
-   *
-   * @returns an array of organisations an user can view/etc
-   */
-  organisationsAllowed(): string[] {
-    const user = this.securityCookieService.getUser();
-    if (user?.allowedOrganisations != null) {
-      return user?.allowedOrganisations;
-    } else {
-      return [];
-    }
-  }
-
-  /**
    * Is the current user an adminstrator?
    */
   isAdmin() {
     const user = this.securityCookieService.getUser();
-    return !!user?.roles.ROLE_ADMIN;
+    return !!user?.roles?.ROLE_ADMIN;
   }
-
 
 }
 

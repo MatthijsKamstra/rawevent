@@ -35,6 +35,17 @@
 							<li>
 								<hr class="dropdown-divider">
 							</li>
+							<li><a class="dropdown-item" href="/user/foooo">user/foo</a>
+							</li>
+							<li><a class="dropdown-item"
+									href="/user/2b40c6d0-3693-4a9f-be42-1fd53d130176">user/2b40c6d0-3693-4a9f-be42-1fd53d130176</a>
+							</li>
+							<li><a class="dropdown-item"
+									href="/user/2b40c6d0-a36f-4f7e-8c14-1042ef6bf7ef">user/2b40c6d0-a36f-4f7e-8c14-1042ef6bf7ef</a>
+							</li>
+							<li>
+								<hr class="dropdown-divider">
+							</li>
 							<li *ngFor="let test of testRoutes">
 								<a class="dropdown-item" [routerLink]="test.path" routerLinkActive="active" href="#">
 									<!--<app-icons icon="{{test.title}}"></app-icons>--> {{test.title}}

@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class Redirects {
 
+	public static REDIRECT_HOME: string = '/';
 	public static REDIRECT_AFTER_LOGIN: string = '/home';
 	public static REDIRECT_LOGIN: string = '/login';
 	public static REDIRECT_LOGOUT: string = '/logout';

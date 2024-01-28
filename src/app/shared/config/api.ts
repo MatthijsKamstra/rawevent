@@ -42,7 +42,8 @@ export class Api {
 				logoutApi: `/assets/dummy/json/logout.json`,
 
 				users(id: string): string {
-					return `/assets/dummy/json/users.json?id=${id}`;
+					// src/assets/dummy/json/fake_database.json
+					return `/assets/dummy/json/fake_database.json?id=${id}`;
 				},
 
 			}
