@@ -1,4 +1,4 @@
-# READ ME
+# README
 
 ```bash
 sh build.sh

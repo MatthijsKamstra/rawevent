@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+	<path fill="black" d="M100 0 L150 50 Q175 75 150 100 Q125 125 100 150 Q75 175 50 150 Q25 125 0 100 Q-25 75 0 50 Q25 25 50 0 Z" />
+	<path fill="black" d="M100 0 L150 50 Q175 75 150 100 Q125 125 100 150 Q75 175 50 150 Q25 125 0 100 Q-25 75 0 50 Q25 25 50 0 Z" transform="translate(200,0) scale(-1,1)" />
+	<path fill="black" d="M100 0 L150 50 Q175 75 150 100 Q125 125 100 150 Q75 175 50 150 Q25 125 0 100 Q-25 75 0 50 Q25 25 50 0 Z" transform="translate(0,200) scale(1,-1)" />
+	<path fill="black" d="M100 0 L150 50 Q175 75 150 100 Q125 125 100 150 Q75 175 50 150 Q25 125 0 100 Q-25 75 0 50 Q25 25 50 0 Z" transform="translate(200,200) scale(-1,-1)" />
+	<circle fill="white" cx="100" cy="100" r="50" />
+</svg>
