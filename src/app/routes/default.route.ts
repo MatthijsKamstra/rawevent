@@ -10,8 +10,8 @@ export const defaultRoutes: Routes = [
 	{ path: "", pathMatch: "full", component: HomePageComponent },
 	// { path: "home", title: "Home", component: HomePageComponent },
 	{ path: "about", title: "About", component: AboutPageComponent },
-	{ path: "dashboard", title: "Dashboard", component: DashboardPageComponent },
-	{ path: "styleguide", title: "Styleguide", component: StyleguideComponent },
-	{ path: "users", title: "Users", component: UsersPageComponent },
+	// { path: "dashboard", title: "Dashboard", component: DashboardPageComponent },
+	// { path: "styleguide", title: "Styleguide", component: StyleguideComponent },
+	// { path: "users", title: "Users", component: UsersPageComponent },
 ];
 
