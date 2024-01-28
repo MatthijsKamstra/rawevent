@@ -22,9 +22,10 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { ProductsInfoPageComponent } from './pages/products-info-page/products-info-page.component';
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
+import { SpeakersPageComponent } from './pages/speakers-page/speakers-page.component';
 import { ColorsComponent } from './pages/styleguide/colors/colors.component';
 import { StyleguideComponent } from './pages/styleguide/styleguide.component';
-import { UsersPageComponent } from './pages/users-page/users-page.component';
+import { UserPageComponent } from './pages/user-page/user-page.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { UsersPageComponent } from './pages/users-page/users-page.component';
     HomePageComponent,
     AboutPageComponent,
     DashboardPageComponent,
-    UsersPageComponent,
+    SpeakersPageComponent,
     ProductsPageComponent,
     ProductsInfoPageComponent,
     NotFoundPageComponent,
@@ -49,6 +50,7 @@ import { UsersPageComponent } from './pages/users-page/users-page.component';
     ProfileDropdownComponent,
     // TranslationDropdownComponent,
     IconsComponent,
+    UserPageComponent,
   ],
   imports: [
     BrowserModule,

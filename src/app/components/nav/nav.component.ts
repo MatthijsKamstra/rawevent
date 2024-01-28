@@ -8,6 +8,7 @@ import { testRoutes } from "../../routes/test.route";
 import { SecurityService } from 'src/app/services/security.service';
 import { environment } from 'src/environments/environment';
 import { pagesRoutes } from "../../routes/pages.route";
+import { UserRoutes } from "../../routes/user.route";
 
 @Component({
   selector: 'app-nav',
@@ -22,6 +23,7 @@ export class NavComponent implements OnInit {
   defaultRoutes: Routes = defaultRoutes;
   testRoutes: Routes = testRoutes;
   pagesRoutes: Routes = pagesRoutes;
+  userRoutes: Routes = UserRoutes;
 
 
   protected readonly environment = environment;
