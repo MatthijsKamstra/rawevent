@@ -13,14 +13,6 @@ export class Constants {
 	public static settingsApi: string = '/settings';
 	public static helpApi: string = '/help';
 	public static apiUsers: string = '/user/:id/';
-	static loginURL: any;
-	static logoutURL: any;
-
-	// Sessions storage
-	public static SESSION_STORAGE_USER: string = 'user_v02';
-	public static SESSION_STORAGE_TOKEN: string = 'token_v02';
-	public static SESSION_STORAGE_ORGANISATION: string = 'organisation_v02';
-
+	public static loginURL: string = '/login';
+	public static logoutURL: string = '/logout';
 }
-
-

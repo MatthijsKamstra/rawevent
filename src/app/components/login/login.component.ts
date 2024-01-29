@@ -58,28 +58,17 @@ export class LoginComponent {
 
 	private handleLoginError(error: HttpErrorResponse) {
 		if (error.status == 401) {
-			let _authErrorString = '';
-			if (error.error && error.error.error && error.error.error.indexOf('expiry date contract') != -1) {
-				_authErrorString = 'login.error.contractDateExpired';
-			} else if (error.error && error.error.error && error.error.error.indexOf('expiry date BEI instruction') != -1) {
-				_authErrorString = 'login.error.beiDateExpired';
-			} else if (error.error && error.error.error && error.error.error.indexOf('this user account is now blocked') != -1) {
-				_authErrorString = 'login.error.accountBlocked';
-			} else if (error.error && error.error.error && error.error.error.indexOf('Unauthorized') != -1) {
-				_authErrorString = 'login.error.invalidCredentials';
-			} else {
-				_authErrorString = 'login.error.invalidLogin';
-			}
-			// this.authError = this.translate.instant(_authErrorString);
+			let _authErrorString = 'login.error.invalidLogin';
+			this.authError = _authErrorString;
 		} else {
-			// this.authError = this.translate.instant('login.error.serverError', { message: error.statusText });
+			this.authError = 'login.error.serverError', { message: error.statusText };
 		}
 	}
 
 	// ____________________________________ onHandlers ____________________________________
 
 	onDebug1Handler() {
-		this.loginForm.setValue({ password: '1234', username: 'test user' });
+		this.loginForm.setValue({ password: '1234', username: 'admin' });
 	}
 
 	onSubmitForm() {
@@ -110,4 +99,3 @@ export class LoginComponent {
 
 }
 
-// app/scripts/directives/security/login/LoginFormController.js

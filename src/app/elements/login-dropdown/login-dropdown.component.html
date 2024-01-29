@@ -1,13 +1,15 @@
-<div class="dropdown">
-	<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-		Dropdown button
+<div class="dropstart">
+	<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+		data-bs-auto-close="outside">
+		Login
 	</button>
-	<ul class="dropdown-menu">
+	<div class="dropdown-menu" style="width: 300px;">
+		<div class="px-4 py-3">
 
-
-
-		<li><a class="dropdown-item" href="#">Action</a></li>
-		<li><a class="dropdown-item" href="#">Another action</a></li>
-		<li><a class="dropdown-item" href="#">Something else here</a></li>
-	</ul>
+			<app-login></app-login>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">New around here? Sign up</a>
+			<a class="dropdown-item" href="#">Forgot password?</a>
+		</div>
+	</div>
 </div>
