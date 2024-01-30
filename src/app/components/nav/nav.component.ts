@@ -17,12 +17,12 @@ import { UserRoutes } from "../../routes/user.route";
 export class NavComponent implements OnInit {
 
   isHiddenIsProduction: boolean = environment.production;
+  isAuthenticated: boolean = this.securityService.isAuthenticated();
 
   defaultRoutes: Routes = defaultRoutes;
   testRoutes: Routes = testRoutes;
   pagesRoutes: Routes = pagesRoutes;
   userRoutes: Routes = UserRoutes;
-
 
   protected readonly environment = environment;
 
@@ -32,5 +32,6 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
     // this.isAdmin = this.securityService.isAdmin();
+
   }
 }

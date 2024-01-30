@@ -24,11 +24,14 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 
 import { LoginComponent } from './components/login/login.component';
 import { LoginDropdownComponent } from './elements/login-dropdown/login-dropdown.component';
+import { LogoutPageComponent } from './pages/logout-page/logout-page.component';
 import { SpeakersPageComponent } from './pages/speakers-page/speakers-page.component';
 import { ColorsComponent } from './pages/styleguide/colors/colors.component';
 import { StyleguideComponent } from './pages/styleguide/styleguide.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
+import { WipPageComponent } from './pages/wip-page/wip-page.component';
 import { DebugDirective } from './shared/directives/debug.directive';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,9 @@ import { DebugDirective } from './shared/directives/debug.directive';
     HeroVisualComponent,
     LoginDropdownComponent,
     LoginComponent,
+    WipPageComponent,
+    LogoutPageComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,

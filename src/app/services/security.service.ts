@@ -3,11 +3,9 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
-
-
-
 import { Api } from '../shared/config/api';
 import { Redirects } from '../shared/constants/redirects';
+import { ICredentials } from '../shared/interfaces/i-credentials';
 import { IUser } from '../shared/interfaces/i-user';
 import { SecurityCookieService } from './security-cookie.service';
 
@@ -21,7 +19,6 @@ export class SecurityService {
     private router: Router,
   ) { }
 
-
   /**
    * Attempt to authenticate a user by the given username and password
    *
@@ -34,10 +31,9 @@ export class SecurityService {
    *
    * @param credentials
    */
-  login(credentials: any): Observable<IUser> {
+  login(credentials: ICredentials): Observable<IUser> {
     const url = Api.getUrl().loginApi;
     let observable: Observable<IUser>;
-
     if (environment.apiEnabled) {
       observable = this.http.post<IUser>(Api.getUrl().loginApi, credentials, {
         withCredentials: true,
@@ -46,7 +42,6 @@ export class SecurityService {
       // needed for locally testing
       observable = this.http.get<IUser>(url);
     }
-
     return observable.pipe(
       tap((data) => {
         this.securityCookieService.storeUser(data);
@@ -61,7 +56,6 @@ export class SecurityService {
   logout(): Observable<{}> {
     const url = Api.getUrl().logoutApi;
     let observable: Observable<{}>;
-
     if (environment.apiEnabled) {
       observable = this.http.post(url, {});
     } else {

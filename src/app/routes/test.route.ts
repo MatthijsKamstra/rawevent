@@ -1,16 +1,10 @@
-
 import { Routes } from "@angular/router";
-import { AboutPageComponent } from "../pages/about-page/about-page.component";
-import { DashboardPageComponent } from "../pages/dashboard-page/dashboard-page.component";
-import { HomePageComponent } from "../pages/home-page/home-page.component";
-import { SpeakersPageComponent } from "../pages/speakers-page/speakers-page.component";
+import { NotFoundPageComponent } from "../pages/not-found-page/not-found-page.component";
 import { StyleguideComponent } from "../pages/styleguide/styleguide.component";
+import { WipPageComponent } from "../pages/wip-page/wip-page.component";
 
 export const testRoutes: Routes = [
-	{ path: "home", title: "Test Home", component: HomePageComponent },
-	{ path: "about", title: "Test About", component: AboutPageComponent },
-	{ path: "dashboard", title: "Test Dashboard", component: DashboardPageComponent },
 	{ path: "styleguide", title: "Test Styleguide", component: StyleguideComponent },
-	{ path: "users", title: "Test Users", component: SpeakersPageComponent },
+	{ path: "wip", title: "Page wip", component: WipPageComponent },
+	{ path: "oeps", title: "Page Oeps", component: NotFoundPageComponent },
 ];
-

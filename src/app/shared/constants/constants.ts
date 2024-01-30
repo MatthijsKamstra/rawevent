@@ -13,6 +13,10 @@ export class Constants {
 	public static settingsApi: string = '/settings';
 	public static helpApi: string = '/help';
 	public static apiUsers: string = '/user/:id/';
+
 	public static loginURL: string = '/login';
 	public static logoutURL: string = '/logout';
+
+	public static signUpURL: string = '/signup';
+	public static passwordURL: string = '/password';
 }

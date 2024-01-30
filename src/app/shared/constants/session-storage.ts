@@ -5,9 +5,7 @@ import { Injectable } from '@angular/core';
 	providedIn: 'root'
 })
 export class SessionStorage {
-
-	public static SESSION_STORAGE_USER: string = 'user_v02';
-	public static SESSION_STORAGE_TOKEN: string = 'token_v02';
-	public static SESSION_STORAGE_ORGANISATION: string = 'organisation_v02';
-
+	public static SESSION_STORAGE_USER: string = 'rawevent_2024_user';
+	public static SESSION_STORAGE_TOKEN: string = 'rawevent_2024_token';
+	public static SESSION_STORAGE_ORGANISATION: string = 'rawevent_2024_organisation';
 }

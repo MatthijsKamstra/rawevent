@@ -35,27 +35,32 @@
 							<li>
 								<hr class="dropdown-divider">
 							</li>
-							<li><a class="dropdown-item" href="/user/foooo">user/foo</a>
+							<li><a class="dropdown-item" href="/user/qr">user/qr</a>
+							<li><a class="dropdown-item" href="/user/qr/foooo">user/qr/foo</a>
 							</li>
 							<li><a class="dropdown-item"
-									href="/user/2b40c6d0-3693-4a9f-be42-1fd53d130176">user/2b40c6d0-3693-4a9f-be42-1fd53d130176</a>
+									href="/user/qr/2b40c6d0-3693-4a9f-be42-1fd53d130176">user/qr/2b40c6d0-3693-4a9f-be42-1fd53d130176</a>
 							</li>
 							<li><a class="dropdown-item"
-									href="/user/2b40c6d0-a36f-4f7e-8c14-1042ef6bf7ef">user/2b40c6d0-a36f-4f7e-8c14-1042ef6bf7ef</a>
+									href="/user/qr/2b40c6d0-a36f-4f7e-8c14-1042ef6bf7ef">user/qr/2b40c6d0-a36f-4f7e-8c14-1042ef6bf7ef</a>
 							</li>
 							<li>
 								<hr class="dropdown-divider">
 							</li>
 							<li *ngFor="let test of testRoutes">
 								<a class="dropdown-item" [routerLink]="test.path" routerLinkActive="active" href="#">
-									<!--<app-icons icon="{{test.title}}"></app-icons>--> {{test.title}}
+									{{test.title}}
 								</a>
+							</li>
+							<li>
+								<hr class="dropdown-divider">
 							</li>
 							<li *ngFor="let pages of pagesRoutes">
 								<a class="dropdown-item" [routerLink]="pages.path" routerLinkActive="active" href="#">
-									<!--<app-icons icon="{{pages.title}}"></app-icons>--> {{pages.title}}
+									<app-icons icon="{{pages.title}}"></app-icons> {{pages.title}}
 								</a>
 							</li>
+
 
 						</ul>
 					</li>
@@ -77,9 +82,9 @@
 				<ul class="navbar-nav ms-auto">
 					<!-- <app-translation-dropdown></app-translation-dropdown> -->
 
-					<app-login-dropdown></app-login-dropdown>
+					<app-login-dropdown *ngIf="!isAuthenticated"></app-login-dropdown>
 
-					<app-profile-dropdown></app-profile-dropdown>
+					<app-profile-dropdown *ngIf="isAuthenticated"></app-profile-dropdown>
 				</ul>
 
 			</div>

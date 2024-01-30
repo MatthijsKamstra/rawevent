@@ -123,6 +123,7 @@ export class IconsComponent implements OnInit {
 			case 'sun': this.icon = 'fa-sun-o'; break;
 			case 'moon': this.icon = 'fa-moon-o'; break;
 			case 'arrow': this.icon = 'fa-arrow-right'; break;
+			case 'arrow-down': this.icon = 'fa-arrow-down'; break;
 
 			case 'expand':
 			case 'full-width':
