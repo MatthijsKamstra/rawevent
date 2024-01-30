@@ -3,7 +3,7 @@ import { Environment } from "src/app/shared/interfaces/i-environment";
 export const environment: Environment = {
 	production: false,
 	apiEnabled: false,
-	text: 'This is staging environment',
+	text: 'This is development environment',
 	// Development Stapi Base URL
-	apiUrl: "",
+	apiUrl: "http://localhost:1337",
 };
