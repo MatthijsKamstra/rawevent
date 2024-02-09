@@ -82,6 +82,10 @@
 				<ul class="navbar-nav ms-auto">
 					<!-- <app-translation-dropdown></app-translation-dropdown> -->
 
+					<span class="text-bg-light">
+						auth:{{this.isAuthenticated}}
+					</span>
+
 					<app-login-dropdown *ngIf="!isAuthenticated"></app-login-dropdown>
 
 					<app-profile-dropdown *ngIf="isAuthenticated"></app-profile-dropdown>

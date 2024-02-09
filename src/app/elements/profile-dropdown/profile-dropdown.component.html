@@ -25,9 +25,13 @@
 
 		<li *ngIf="!isHiddenIsProduction">
 			<hr class="dropdown-divider">
-			<span class="px-3 text-body-secondary">
-				<!-- <app-is-local></app-is-local> -->
-			</span>
+			<div class="col px-3">
+				<div class="form-check form-switch">
+					<input class="form-check-input" type="checkbox" role="switch" id="isEnvApiEnabled"
+						[checked]="this.isEnvApiEnabled" (change)="onForceToggle()">
+					<label class="form-check-label" for="isEnvApiEnabled">{{onToggleText()}}</label>
+				</div>
+			</div>
 		</li>
 		<li>
 			<hr class="dropdown-divider">

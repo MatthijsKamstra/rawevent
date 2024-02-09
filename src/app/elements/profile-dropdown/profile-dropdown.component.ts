@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { EnvironmentService } from 'src/app/services/environment.service';
 import { SecurityService } from 'src/app/services/security.service';
 import { IUser } from 'src/app/shared/interfaces/i-user';
 
@@ -14,20 +15,17 @@ export class ProfileDropdownComponent implements OnInit {
 
 	protected TITLE: string = 'Profile';
 	title: string = this.TITLE;
-	userName: string = '';
+	userName: string = '...';
 
-	isFeatureDashboard: boolean = false;
-	isNetManagementOrganisation: boolean = false;
-	isHiddenIsProduction: boolean = true;
-
-	protected readonly environment = environment;
+	isEnvApiEnabled: boolean = this.environmentService.isApiEnabled();
+	isHiddenIsProduction: boolean = this.environmentService.isProduction();
 
 	constructor(
 		private securityService: SecurityService,
+		private environmentService: EnvironmentService,
 	) { }
 
 	ngOnInit(): void {
-		this.isHiddenIsProduction = this.environment.production;
 		this.getUser();
 	}
 
@@ -35,6 +33,19 @@ export class ProfileDropdownComponent implements OnInit {
 		const user: IUser | null = this.securityService.getUser();
 		if (user !== null) {
 			this.userName = user.userName;
+		}
+	}
+
+	onForceToggle() {
+		this.isEnvApiEnabled = !this.isEnvApiEnabled;
+		environment.apiEnabled = this.isEnvApiEnabled;
+	}
+
+	onToggleText(): string {
+		if (this.isEnvApiEnabled) {
+			return 'Api';
+		} else {
+			return 'Local';
 		}
 	}
 

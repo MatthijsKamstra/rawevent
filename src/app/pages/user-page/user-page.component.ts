@@ -24,7 +24,10 @@ export class UserPageComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    if (id == null) return;
+    if (id == null) {
+      // [mck] should this be a redirect???
+      return;
+    };
     this.id = id;
 
     this.userService.getUserById(this.id).subscribe({
@@ -35,9 +38,7 @@ export class UserPageComponent implements OnInit {
         } else {
           console.log('known');
           console.log(value);
-
           this.user = value;
-
         }
       },
       error(err) {

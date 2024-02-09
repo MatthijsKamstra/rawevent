@@ -4,6 +4,7 @@ import { Routes } from "@angular/router";
 import { defaultRoutes } from "../../routes/default.route";
 import { testRoutes } from "../../routes/test.route";
 
+import { EnvironmentService } from 'src/app/services/environment.service';
 import { SecurityService } from 'src/app/services/security.service';
 import { environment } from 'src/environments/environment';
 import { pagesRoutes } from "../../routes/pages.route";
@@ -16,7 +17,7 @@ import { UserRoutes } from "../../routes/user.route";
 })
 export class NavComponent implements OnInit {
 
-  isHiddenIsProduction: boolean = environment.production;
+  isHiddenIsProduction: boolean = this.environmentService.isProduction();
   isAuthenticated: boolean = this.securityService.isAuthenticated();
 
   defaultRoutes: Routes = defaultRoutes;
@@ -24,14 +25,14 @@ export class NavComponent implements OnInit {
   pagesRoutes: Routes = pagesRoutes;
   userRoutes: Routes = UserRoutes;
 
-  protected readonly environment = environment;
-
   constructor(
+    private environmentService: EnvironmentService,
     private securityService: SecurityService,
   ) { }
 
   ngOnInit(): void {
-    // this.isAdmin = this.securityService.isAdmin();
-
+    this.isHiddenIsProduction = this.environmentService.isProduction();
+    this.isAuthenticated = this.securityService.isAuthenticated();
   }
+
 }

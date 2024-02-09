@@ -24,7 +24,7 @@ export class LogoutPageComponent implements OnInit {
     this.securityService.clearLocalSession();
 
     this.securityService.logout().subscribe(
-      response => this.router.navigate([Redirects.REDIRECT_LOGIN])
+      response => this.router.navigate([Redirects.REDIRECT_HOME])
     );
   }
 }
