@@ -35,9 +35,11 @@ export class SecurityService {
     const url = Api.getUrl().loginApi;
     let observable: Observable<IUser>;
     if (environment.apiEnabled) {
-      observable = this.http.post<IUser>(Api.getUrl().loginApi, credentials, {
-        withCredentials: true,
-      });
+      // observable = this.http.post<IUser>(url, credentials, {
+      //   withCredentials: true,
+      // });
+      // [FIXME] : this is local data
+      observable = this.http.get<IUser>(url);
     } else {
       // needed for locally testing
       observable = this.http.get<IUser>(url);

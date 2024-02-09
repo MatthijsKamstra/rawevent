@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ProfileDropdownComponent implements OnInit {
 
+
 	protected TITLE: string = 'Profile';
 	title: string = this.TITLE;
 	userName: string = '...';
@@ -38,6 +39,8 @@ export class ProfileDropdownComponent implements OnInit {
 		}
 	}
 
+	// ____________________________________ toggle ____________________________________
+
 	onForceToggle() {
 		this.isEnvApiEnabled = !this.isEnvApiEnabled;
 		environment.apiEnabled = this.isEnvApiEnabled;
@@ -49,6 +52,13 @@ export class ProfileDropdownComponent implements OnInit {
 		} else {
 			return 'Local';
 		}
+	}
+
+	// ____________________________________ onclick ____________________________________
+
+	onClickHandler() {
+		this.securityService.clearLocalSession();
+		this.change.emit();
 	}
 
 }

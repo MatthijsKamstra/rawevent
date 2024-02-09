@@ -31,11 +31,15 @@ export class NavComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.onUpdateHandler();
+  }
+
+  onUpdateHandler() {
     this.isHiddenIsProduction = this.environmentService.isProduction();
     this.isAuthenticated = this.securityService.isAuthenticated();
   }
 
   onChangeHandler() {
-    console.log('HWOOOOOOO');
+    this.onUpdateHandler();
   }
 }

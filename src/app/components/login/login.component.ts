@@ -17,13 +17,13 @@ import { IUser } from 'src/app/shared/interfaces/i-user';
 })
 export class LoginComponent {
 
+	@Output() change = new EventEmitter();
+
 	// set loading on when getting data from server
 	isLoading: boolean = false; // check icons
 
 	// not sure this is really a good idea???
 	authError!: string;
-
-	@Output() change = new EventEmitter();
 
 	// form
 	loginForm = new FormGroup({

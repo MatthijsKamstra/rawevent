@@ -30,10 +30,10 @@ export class LogoutPageComponent implements OnInit {
         // });
         this.router.navigate([Redirects.REDIRECT_HOME]);
         // [mck] a bit clumbsy, and with a small delay
-        setTimeout(() => {
-          // Refresh the page
-          location.reload();
-        }, 500); // time in milliseconds
+        // setTimeout(() => {
+        //   // Refresh the page
+        //   location.reload();
+        // }, 500); // time in milliseconds
       }
     );
   }

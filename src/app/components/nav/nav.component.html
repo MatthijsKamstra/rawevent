@@ -1,7 +1,7 @@
 <header>
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
 		<div class="container">
-			<a class="navbar-brand" href="/">🦊</a>
+			<a class="navbar-brand" href="/">🐙</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
 				aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -11,18 +11,16 @@
 
 					<li class="nav-item">
 						<a class="nav-link" routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">
-							<!--<app-icons icon="home"></app-icons>--> Home
+							<app-icons icon="home"></app-icons> Home
 						</a>
 					</li>
 
 					<li class="nav-item" *ngFor="let default of defaultRoutes">
 						<a class="nav-link" [routerLink]="default.path" routerLinkActive="active"
 							ariaCurrentWhenActive="page">
-							<!--<app-icons icon="{{default.title}}"></app-icons>--> {{default.title}}
+							<app-icons icon="{{default.title}}"></app-icons> {{default.title}}
 						</a>
 					</li>
-
-
 
 					<li class="nav-item dropdown" *ngIf="!isHiddenIsProduction">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -60,34 +58,12 @@
 									<app-icons icon="{{pages.title}}"></app-icons> {{pages.title}}
 								</a>
 							</li>
-
-
 						</ul>
 					</li>
-
-
-
-					<!--
-				<div *ngFor="let product of productRoutes">
-					<li *ngIf="product.title != \Products-id\ " class="nav-item">
-						<a class="nav-link" [routerLink]="product.path" routerLinkActive="active" ariaCurrentWhenActive="page">
-							{{product.title}}
-						</a>
-					</li>
-				</div>
--->
-
 				</ul>
 
 				<ul class="navbar-nav ms-auto">
-					<!-- <app-translation-dropdown></app-translation-dropdown> -->
-
-					<span class="text-bg-light">
-						auth:{{this.isAuthenticated}}
-					</span>
-
 					<app-login-dropdown *ngIf="!isAuthenticated" (change)="onChangeHandler()"></app-login-dropdown>
-
 					<app-profile-dropdown *ngIf="isAuthenticated" (change)="onChangeHandler()"></app-profile-dropdown>
 				</ul>
 
