@@ -5,7 +5,7 @@
 	</button>
 	<div id="loginDropdown" class="dropdown-menu" style="width: 300px;">
 		<div class="px-4 py-3">
-			<app-login></app-login>
+			<app-login (change)="onClickHandler()"></app-login>
 			<div class="dropdown-divider"></div>
 			<a class="dropdown-item" routerLink="/signup" (click)="onClickHandler()">New around here? Sign up</a>
 			<a class="dropdown-item" routerLink="/passwordrecover" (click)="onClickHandler()">Forgot password?</a>

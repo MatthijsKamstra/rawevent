@@ -86,9 +86,9 @@
 						auth:{{this.isAuthenticated}}
 					</span>
 
-					<app-login-dropdown *ngIf="!isAuthenticated"></app-login-dropdown>
+					<app-login-dropdown *ngIf="!isAuthenticated" (change)="onChangeHandler()"></app-login-dropdown>
 
-					<app-profile-dropdown *ngIf="isAuthenticated"></app-profile-dropdown>
+					<app-profile-dropdown *ngIf="isAuthenticated" (change)="onChangeHandler()"></app-profile-dropdown>
 				</ul>
 
 			</div>

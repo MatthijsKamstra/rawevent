@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { EnvironmentService } from 'src/app/services/environment.service';
 import { SecurityService } from 'src/app/services/security.service';
 import { IUser } from 'src/app/shared/interfaces/i-user';
@@ -19,6 +19,8 @@ export class ProfileDropdownComponent implements OnInit {
 
 	isEnvApiEnabled: boolean = this.environmentService.isApiEnabled();
 	isHiddenIsProduction: boolean = this.environmentService.isProduction();
+
+	@Output() change = new EventEmitter();
 
 	constructor(
 		private securityService: SecurityService,

@@ -1,6 +1,6 @@
 
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -22,6 +22,8 @@ export class LoginComponent {
 
 	// not sure this is really a good idea???
 	authError!: string;
+
+	@Output() change = new EventEmitter();
 
 	// form
 	loginForm = new FormGroup({
@@ -45,6 +47,7 @@ export class LoginComponent {
 		this.securityService.login(credentials)
 			.subscribe({
 				next: (user: IUser) => {
+					this.change.emit();
 					this.router.navigate([Redirects.REDIRECT_AFTER_LOGIN]);
 				},
 				error: (error: HttpErrorResponse) => {
@@ -77,7 +80,6 @@ export class LoginComponent {
 			username: this.loginForm.value.username as string,
 			password: this.loginForm.value.password as string
 		}
-
 		this.loginUser(credentials);
 	}
 

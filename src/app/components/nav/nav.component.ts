@@ -35,4 +35,7 @@ export class NavComponent implements OnInit {
     this.isAuthenticated = this.securityService.isAuthenticated();
   }
 
+  onChangeHandler() {
+    console.log('HWOOOOOOO');
+  }
 }

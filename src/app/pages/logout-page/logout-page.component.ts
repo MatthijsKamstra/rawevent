@@ -22,9 +22,19 @@ export class LogoutPageComponent implements OnInit {
 
   private logout(): void {
     this.securityService.clearLocalSession();
-
+    // delay redirect
     this.securityService.logout().subscribe(
-      response => this.router.navigate([Redirects.REDIRECT_HOME])
+      response => {
+        // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        //   this.router.navigate([Redirects.REDIRECT_HOME]);
+        // });
+        this.router.navigate([Redirects.REDIRECT_HOME]);
+        // [mck] a bit clumbsy, and with a small delay
+        setTimeout(() => {
+          // Refresh the page
+          location.reload();
+        }, 500); // time in milliseconds
+      }
     );
   }
 }
