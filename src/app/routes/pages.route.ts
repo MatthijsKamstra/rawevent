@@ -17,5 +17,6 @@ export const pagesRoutes: Routes = [
 	{ path: "login", title: "Login", component: LoginPageComponent },
 	{ path: "logout", title: "Logout", component: LogoutPageComponent },
 	{ path: "signup", title: "Signup", component: WipPageComponent },
+	{ path: "passwordrecover", title: "Signup", component: WipPageComponent },
 ];
 
