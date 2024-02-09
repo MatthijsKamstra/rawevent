@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 GITHUB_USER=matthijskamstra
 PROJECT=rawevent
 
