@@ -14,7 +14,6 @@ import { IUser } from 'src/app/shared/interfaces/i-user';
 })
 export class SettingsPageComponent implements OnInit {
 
-
   title: string = 'Settings';
 
   user!: IUser;

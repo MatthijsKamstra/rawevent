@@ -52,23 +52,23 @@ export class Api {
 		} else {
 			return {
 				env: `TEST`,
-				configApi: `/assets/dummy/json/application.json`,
+				configApi: `assets/dummy/json/application.json`,
 
-				helpApi: `/assets/dummy/json/help.json`,
-				settingsApi: `/assets/dummy/json/settings.json`,
+				helpApi: `assets/dummy/json/help.json`,
+				settingsApi: `assets/dummy/json/settings.json`,
 
 				// loginApi: `/assets/dummy/json/login.json`,
 
-				loginApi: `/assets/dummy/json/fake_login.json`,
-				logoutApi: `/assets/dummy/json/logout.json`,
+				loginApi: `assets/dummy/json/fake_login.json`,
+				logoutApi: `assets/dummy/json/logout.json`,
 
 				users(): string {
-					return `/assets/dummy/json/fake_database.json`;
+					return `assets/dummy/json/fake_database.json`;
 				},
 
 				userById(id: string): string {
 					// src/assets/dummy/json/fake_database.json
-					return `/assets/dummy/json/fake_database.json?id=${id}`;
+					return `assets/dummy/json/fake_database.json?id=${id}`;
 				},
 
 			}
