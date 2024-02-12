@@ -33,21 +33,6 @@ export class Api {
 				userById(id: string): string {
 					return `${environment.apiUrl}${Constants.apiUserById.replace(':id', `${id}`)}`;
 				},
-
-
-				// // for now replace PRD with dummy data
-
-				// loginApi: `/assets/dummy/json/fake_login.json`,
-				// logoutApi: `/assets/dummy/json/logout.json`,
-
-				// users(): string {
-				// 	return `/assets/dummy/json/fake_database.json`;
-				// },
-
-				// userById(id: string): string {
-				// 	// src/assets/dummy/json/fake_database.json
-				// 	return `/assets/dummy/json/fake_database.json?id=${id}`;
-				// },
 			}
 		} else {
 			return {
@@ -57,7 +42,7 @@ export class Api {
 				helpApi: `assets/dummy/json/help.json`,
 				settingsApi: `assets/dummy/json/settings.json`,
 
-				// loginApi: `/assets/dummy/json/login.json`,
+				// loginApi: `assets/dummy/json/login.json`,
 
 				loginApi: `assets/dummy/json/fake_login.json`,
 				logoutApi: `assets/dummy/json/logout.json`,
