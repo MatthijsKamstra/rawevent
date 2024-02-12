@@ -13,7 +13,6 @@ import { environment } from 'src/environments/environment';
 })
 export class ProfileDropdownComponent implements OnInit {
 
-
 	protected TITLE: string = 'Profile';
 	title: string = this.TITLE;
 	userName: string = '...';
@@ -34,7 +33,7 @@ export class ProfileDropdownComponent implements OnInit {
 
 	getUser() {
 		const user: IUser | null = this.securityService.getUser();
-		if (user !== null) {
+		if (user) {
 			this.userName = user.userName;
 		}
 	}

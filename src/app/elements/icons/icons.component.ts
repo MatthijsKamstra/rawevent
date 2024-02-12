@@ -155,6 +155,14 @@ export class IconsComponent implements OnInit {
 
 			case 'install': this.icon = 'fa-cube'; break;
 
+
+			case 'speakers': this.icon = 'fa-star'; break;
+
+			case 'logout': this.icon = 'fa-sign-out'; break;
+			case 'login': this.icon = 'fa-sign-in'; break;
+
+			case 'signup': this.icon = 'fa-edit'; break;
+
 			default:
 				console.log(`case '${this.icon.toLowerCase()}': this.icon = '${this.icon.toLowerCase()}'; break;`);
 				this.icon = 'fa-remove';

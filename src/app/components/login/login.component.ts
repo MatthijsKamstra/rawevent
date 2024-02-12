@@ -32,7 +32,7 @@ export class LoginComponent {
 	});
 
 	constructor(
-		public router: Router,
+		private router: Router,
 		private securityService: SecurityService,
 	) { }
 
@@ -47,6 +47,7 @@ export class LoginComponent {
 		this.securityService.login(credentials)
 			.subscribe({
 				next: (user: IUser) => {
+					// console.log(user);
 					this.change.emit();
 					this.router.navigate([Redirects.REDIRECT_AFTER_LOGIN]);
 				},
