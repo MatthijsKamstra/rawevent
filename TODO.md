@@ -12,7 +12,7 @@ MVP / POC
 - [x] create github pages
 - [x] add user/attendee page
 - [x] add login page
-- [ ] add after login attendee page
+- [x] add after login attendee page
 - [ ] ....
 
 Vergelijkbare oplossing aan de website kant: https://www.yellenge.nl/succesvol-event/

@@ -2,8 +2,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { TestPipe } from './_test/test.pipe';
-import { TestComponent } from './_test/test/test.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -52,8 +50,6 @@ import { DebugDirective } from './shared/directives/debug.directive';
     ProfileDropdownComponent,
     SpeakersPageComponent,
     StyleguideComponent,
-    TestComponent,
-    TestPipe,
     UitlegPageComponent,
     UserPageComponent,
     WipPageComponent,
