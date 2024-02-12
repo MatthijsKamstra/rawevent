@@ -1,6 +1,14 @@
 <section class="container">
 	<h2>{{this.title}}</h2>
 
+
+	<p>
+		isApiEnabled: {{this.isApiEnabled}}
+	</p>
+	<p>
+		isProduction: {{this.isProduction}}
+	</p>
+
 	<div *ngIf="this.user">
 		<p> FirstName and LastName:
 			<strong>

@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EnvironmentService } from 'src/app/services/environment.service';
 import { SecurityService } from 'src/app/services/security.service';
 import { Redirects } from 'src/app/shared/constants/redirects';
 import { ICredentials } from 'src/app/shared/interfaces/i-credentials';
@@ -18,9 +19,13 @@ export class SettingsPageComponent implements OnInit {
 
   user!: IUser;
 
+  isApiEnabled = this.environmentService.isApiEnabled();
+  isProduction = this.environmentService.isProduction();
+
   constructor(
     private router: Router,
     private securityService: SecurityService,
+    private environmentService: EnvironmentService,
   ) { }
 
   ngOnInit(): void {
@@ -39,7 +44,6 @@ export class SettingsPageComponent implements OnInit {
     this.securityService.login(credentials).subscribe({
       next: (user: IUser) => {
         // console.log(user);
-
         if (!user) {
           // not correct login, so redirect to somewhere
           this.router.navigate([Redirects.REDIRECT_AFTER_LOGIN_FALSE]);
