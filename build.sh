@@ -4,7 +4,7 @@ GITHUB_USER=matthijskamstra
 PROJECT=rawevent
 
 # Build the project first.
-ng build --configuration production --base-href=/$PROJECT/
+ng build --configuration production --deploy-url=https://$GITHUB_USER.github.io/$PROJECT/ --base-href=/$PROJECT/
 
 # Instead of copying index.html, echo and cat the content so that `YAML front matter` was added.
 echo "---

@@ -89,5 +89,4 @@ export interface IConstants {
 	// user
 	users: () => string;
 	userById: (id: string) => string;
-
 }
