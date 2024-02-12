@@ -2,66 +2,61 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
-
 import { TestPipe } from './_test/test.pipe';
 import { TestComponent } from './_test/test/test.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeroVideoRawGeniusComponent } from './components/hero-video-rawgenius/hero-video-rawgenius.component';
-
+import { HeroVisualComponent } from './components/hero-visual/hero-visual.component';
+import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
 import { Btn2topComponent } from './elements/btn2top/btn2top.component';
 import { IconsComponent } from './elements/icons/icons.component';
+import { LoginDropdownComponent } from './elements/login-dropdown/login-dropdown.component';
 import { ProfileDropdownComponent } from './elements/profile-dropdown/profile-dropdown.component';
-// import { TranslationDropdownComponent } from './elements/translation-dropdown/translation-dropdown.component';
-import { HeroVisualComponent } from './components/hero-visual/hero-visual.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
-
-import { LoginComponent } from './components/login/login.component';
-import { LoginDropdownComponent } from './elements/login-dropdown/login-dropdown.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { LogoutPageComponent } from './pages/logout-page/logout-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { SpeakersPageComponent } from './pages/speakers-page/speakers-page.component';
 import { ColorsComponent } from './pages/styleguide/colors/colors.component';
 import { StyleguideComponent } from './pages/styleguide/styleguide.component';
+import { UitlegPageComponent } from './pages/uitleg-page/uitleg-page.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { WipPageComponent } from './pages/wip-page/wip-page.component';
 import { DebugDirective } from './shared/directives/debug.directive';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavComponent,
-    FooterComponent,
-    IconsComponent,
-    HomePageComponent,
     AboutPageComponent,
-    DashboardPageComponent,
-    SpeakersPageComponent,
-
-    NotFoundPageComponent,
-    StyleguideComponent,
-    ColorsComponent,
-    TestPipe,
-    TestComponent,
+    AppComponent,
     Btn2topComponent,
-    HeroVideoRawGeniusComponent,
-    ProfileDropdownComponent,
-    // TranslationDropdownComponent,
-    IconsComponent,
+    ColorsComponent,
+    DashboardPageComponent,
     DebugDirective,
-    UserPageComponent,
+    FooterComponent,
+    HeroVideoRawGeniusComponent,
     HeroVisualComponent,
-    LoginDropdownComponent,
+    HomePageComponent,
+    IconsComponent,
+    IconsComponent,
     LoginComponent,
-    WipPageComponent,
-    LogoutPageComponent,
+    LoginDropdownComponent,
     LoginPageComponent,
+    LogoutPageComponent,
+    NavComponent,
+    NotFoundPageComponent,
+    ProfileDropdownComponent,
+    SpeakersPageComponent,
+    StyleguideComponent,
+    TestComponent,
+    TestPipe,
+    UitlegPageComponent,
+    UserPageComponent,
+    WipPageComponent,
   ],
   imports: [
     BrowserModule,

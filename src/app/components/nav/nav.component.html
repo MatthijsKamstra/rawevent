@@ -9,18 +9,31 @@
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav mr-auto">
 
-					<li class="nav-item">
+					<!--
+						<li class="nav-item">
 						<a class="nav-link" routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">
 							<app-icons icon="home"></app-icons> Home
 						</a>
 					</li>
+					-->
 
-					<li class="nav-item" *ngFor="let default of defaultRoutes">
-						<a class="nav-link" [routerLink]="default.path" routerLinkActive="active"
+					<li class="nav-item" *ngFor="let public of publicRoutes">
+						<a class="nav-link" [routerLink]="public.path" routerLinkActive="active"
 							ariaCurrentWhenActive="page">
-							<app-icons icon="{{default.title}}"></app-icons> {{default.title}}
+							<app-icons icon="{{public.title}}"></app-icons> {{public.title}}
 						</a>
 					</li>
+
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">
+							🐞 Debug
+						</a>
+						<ul class="dropdown-menu dropdown-menu-dark">
+							<li><a class="dropdown-item" href="/uitleg">Uitleg</a></li>
+						</ul>
+					</li>
+
 
 					<li class="nav-item dropdown" *ngIf="!isHiddenIsProduction">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

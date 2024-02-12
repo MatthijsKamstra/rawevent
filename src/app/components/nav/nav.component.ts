@@ -4,6 +4,7 @@ import { Routes } from "@angular/router";
 import { defaultRoutes } from "../../routes/default.route";
 import { testRoutes } from "../../routes/test.route";
 
+import { navigationRoutes } from 'src/app/routes/navigation.route';
 import { EnvironmentService } from 'src/app/services/environment.service';
 import { SecurityService } from 'src/app/services/security.service';
 import { environment } from 'src/environments/environment';
@@ -21,6 +22,7 @@ export class NavComponent implements OnInit {
   isAuthenticated: boolean = this.securityService.isAuthenticated();
 
   defaultRoutes: Routes = defaultRoutes;
+  publicRoutes: Routes = navigationRoutes;
   testRoutes: Routes = testRoutes;
   pagesRoutes: Routes = pagesRoutes;
   userRoutes: Routes = UserRoutes;

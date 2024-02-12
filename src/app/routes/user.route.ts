@@ -8,4 +8,3 @@ export const UserRoutes: Routes = [
 	{ path: "user/qr", redirectTo: 'home', pathMatch: 'full' }, // redirect to ...
 	{ path: "user/dashboard", title: "User Dasthboard", component: WipPageComponent },
 ];
-

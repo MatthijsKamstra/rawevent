@@ -6,6 +6,7 @@ import { LoginPageComponent } from "../pages/login-page/login-page.component";
 import { LogoutPageComponent } from "../pages/logout-page/logout-page.component";
 import { SpeakersPageComponent } from "../pages/speakers-page/speakers-page.component";
 import { StyleguideComponent } from "../pages/styleguide/styleguide.component";
+import { UitlegPageComponent } from "../pages/uitleg-page/uitleg-page.component";
 import { WipPageComponent } from "../pages/wip-page/wip-page.component";
 
 export const pagesRoutes: Routes = [
@@ -18,5 +19,5 @@ export const pagesRoutes: Routes = [
 	{ path: "logout", title: "Logout", component: LogoutPageComponent },
 	{ path: "signup", title: "Signup", component: WipPageComponent },
 	{ path: "passwordrecover", title: "Signup", component: WipPageComponent },
+	{ path: "uitleg", title: "Signup", component: UitlegPageComponent },
 ];
-
