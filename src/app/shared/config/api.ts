@@ -42,7 +42,9 @@ export class Api {
 				helpApi: `/assets/dummy/json/help.json`,
 				settingsApi: `/assets/dummy/json/settings.json`,
 
-				loginApi: `/assets/dummy/json/login.json`,
+				// loginApi: `/assets/dummy/json/login.json`,
+
+				loginApi: `/assets/dummy/json/fake_login.json`,
 				logoutApi: `/assets/dummy/json/logout.json`,
 
 				users(): string {

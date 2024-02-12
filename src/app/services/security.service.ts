@@ -1,11 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, tap } from 'rxjs';
+import { sha256 } from 'js-sha256';
+import { Observable, map, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Api } from '../shared/config/api';
 import { Redirects } from '../shared/constants/redirects';
 import { ICredentials } from '../shared/interfaces/i-credentials';
+import { IFakeDatabase } from '../shared/interfaces/i-fakedatabase';
+import { ILoginDatabase } from '../shared/interfaces/i-fakelogin';
 import { IUser } from '../shared/interfaces/i-user';
 import { SecurityCookieService } from './security-cookie.service';
 
@@ -33,20 +36,32 @@ export class SecurityService {
    */
   login(credentials: ICredentials): Observable<IUser> {
     const url = Api.getUrl().loginApi;
-    let observable: Observable<IUser>;
-    if (environment.apiEnabled) {
-      // observable = this.http.post<IUser>(url, credentials, {
-      //   withCredentials: true,
-      // });
-      // [FIXME] : this is local data
-      observable = this.http.get<IUser>(url);
-    } else {
-      // needed for locally testing
-      observable = this.http.get<IUser>(url);
-    }
+
+    // let observable: Observable<IUser>;
+    // if (environment.apiEnabled) {
+    //   console.warn("PRD");
+    //   // observable = this.http.post<IUser>(url, credentials, {
+    //   //   withCredentials: true,
+    //   // });
+    // } else {
+    //   console.warn("LOCAL");
+    //   observable = this.http.get<IUser>(url);
+    // }
+
+    let observable: Observable<ILoginDatabase>;
+    observable = this.http.get<ILoginDatabase>(url);
     return observable.pipe(
-      tap((data) => {
-        this.securityCookieService.storeUser(data);
+      map((data: ILoginDatabase) => {
+        // console.log(data);
+        // console.log(credentials);
+        const hash = sha256(`${credentials.username}${credentials.password}`);
+        // console.log(hash);
+        const user: IUser = data.fakelogin[hash]; // also posible to be undefined
+        // console.log(user);
+        if (user) {
+          this.securityCookieService.storeUser(user);
+        }
+        return user;
       })
     );
   }

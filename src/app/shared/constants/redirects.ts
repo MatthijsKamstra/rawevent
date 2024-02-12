@@ -10,4 +10,6 @@ export class Redirects {
 	public static REDIRECT_LOGIN: string = '/login';
 	public static REDIRECT_LOGOUT: string = '/logout';
 	public static REDIRECT_NOT_FOUND: string = '/not-found';
+
+	static REDIRECT_AFTER_LOGIN_FALSE: string = '/login';
 }

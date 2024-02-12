@@ -1,0 +1,17 @@
+<section class="container">
+	<h2>{{this.title}}</h2>
+
+	<div *ngIf="this.user">
+		<p> FirstName and LastName:
+			<strong>
+				{{user.firstName}} {{user.lastName}}
+			</strong>
+			<br>
+			Token: <br>
+			<code>{{user.token}}</code>
+		</p>
+
+		<h3>token set in session cookie</h3>
+		<code>{{this.currentToken()}}</code>
+	</div>
+</section>

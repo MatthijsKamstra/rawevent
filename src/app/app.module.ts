@@ -26,6 +26,7 @@ import { UitlegPageComponent } from './pages/uitleg-page/uitleg-page.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { WipPageComponent } from './pages/wip-page/wip-page.component';
 import { DebugDirective } from './shared/directives/debug.directive';
+import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { DebugDirective } from './shared/directives/debug.directive';
     UitlegPageComponent,
     UserPageComponent,
     WipPageComponent,
+    SettingsPageComponent,
   ],
   imports: [
     BrowserModule,
