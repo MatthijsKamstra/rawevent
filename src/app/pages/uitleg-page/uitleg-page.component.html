@@ -1,1 +1,36 @@
-<p>uitleg-page works!</p>
+<app-hero-visual img="https://picsum.photos/id/26/1024/400/"></app-hero-visual>
+
+<section class="container">
+	<h2>{{this.title}}</h2>
+	<p class="alert alert-danger">Om dit concept te kunnen testen is deze pagina zichtbaar. Het zou het natuurlijk
+		"raar" zijn om gebruikers op deze manier te ontsluiten!</p>
+	<p>Hieronder zijn 10 gebruikers die je kunt gebruiken om het concept te testen</p>
+
+	<h3>List of 10 users</h3>
+	<div *ngIf="this.users">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">username</th>
+					<th scope="col">password</th>
+					<th scope="col">sha256</th>
+					<th scope="col">QR</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let user of users; let i = index">
+					<th scope="row">{{i+1}}</th>
+					<td>{{user.userName}}</td>
+					<td>1234</td>
+					<td>{{this.convert2Sha256(user.userName)}}</td>
+					<td>
+						<div [innerHTML]="this.convertQR(user)"></div>
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+
+</section>

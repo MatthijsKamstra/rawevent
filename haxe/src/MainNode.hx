@@ -240,9 +240,11 @@ class MainNode {
 
 		// 256px  = 67,733 mm
 
+		var url = '${attendee._id}';
+
 		var svg = new QrcodeSvg({
 			// content: 'http://foobar.nl/${attendee.userName}',
-			content: '${attendee._id}',
+			content: url,
 			padding: 4,
 			width: 256,
 			height: 256,

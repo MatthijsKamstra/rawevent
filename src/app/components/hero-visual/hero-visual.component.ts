@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { ModeEnum } from 'src/app/shared/enums/mode.enum';
-import { IHero } from 'src/app/shared/interfaces/i-root';
-
+/**
+ * https://picsum.photos/images
+ */
 @Component({
 	selector: 'app-hero-visual',
 	templateUrl: './hero-visual.component.html',

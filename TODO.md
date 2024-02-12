@@ -15,6 +15,21 @@ MVP / POC
 - [x] add after login attendee page
 - [ ] ....
 
+## install
+
+- js-sha256 <https://www.npmjs.com/package/js-sha256>
+- qrcode-svg <https://www.npmjs.com/package/qrcode-svg>
+
+```bash
+npm i --save-dev @types/qrcode-svg
+```
+
+```bash
+npm install js-sha256 qrcode-svg
+```
+
+## Inspiration
+
 Vergelijkbare oplossing aan de website kant: https://www.yellenge.nl/succesvol-event/
 
 ## Add content to index.html

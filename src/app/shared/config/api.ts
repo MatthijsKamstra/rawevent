@@ -26,8 +26,12 @@ export class Api {
 				loginApi: `${environment.apiUrl}${Constants.loginURL}`,
 				logoutApi: `${environment.apiUrl}${Constants.logoutURL}`,
 
-				users(id: string): string {
-					return `${environment.apiUrl}${Constants.apiUsers.replace(':id', `${id}`)}`;
+				users(): string {
+					return `${environment.apiUrl}${Constants.apiUsers}`;
+				},
+
+				userById(id: string): string {
+					return `${environment.apiUrl}${Constants.apiUserById.replace(':id', `${id}`)}`;
 				},
 			}
 		} else {
@@ -41,7 +45,11 @@ export class Api {
 				loginApi: `/assets/dummy/json/login.json`,
 				logoutApi: `/assets/dummy/json/logout.json`,
 
-				users(id: string): string {
+				users(): string {
+					return `/assets/dummy/json/fake_database.json`;
+				},
+
+				userById(id: string): string {
 					// src/assets/dummy/json/fake_database.json
 					return `/assets/dummy/json/fake_database.json?id=${id}`;
 				},
@@ -62,6 +70,7 @@ export interface IConstants {
 	settingsApi: string;
 
 	// user
-	users: (id: string) => string;
+	users: () => string;
+	userById: (id: string) => string;
 
 }
