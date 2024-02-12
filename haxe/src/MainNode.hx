@@ -2,6 +2,7 @@ package;
 
 import const.Folder;
 import haxe.Json;
+import haxe.crypto.Sha256;
 import haxe.io.Path;
 import js.Browser.*;
 import sys.FileSystem;
@@ -14,9 +15,13 @@ class MainNode {
 	}
 
 	function init() {
+		// var path = 'data/attendees_00010.json';
+		// var path = 'data/attendees_00100.json';
+		var path = 'data/attendees_00176.json';
+		//
 		initFolders();
 		testQRCodeGeneration();
-		generateQR4Attendees();
+		generateQR4Attendees(path);
 		// convert combo from svg to png
 		// will take a while
 		// convertSVG2PNG();
@@ -25,14 +30,41 @@ class MainNode {
 		convertPNG2JSONScribis();
 
 		// convert json to fake database;
-		convertFakeDatabase();
+		convertFakeDatabase(path);
+		convertFakeLogin(path);
 	}
 
-	function convertFakeDatabase() {
+	function convertFakeLogin(path:String) {
+		log('convertFakeLogin');
+		var content = File.getContent(path);
+		// trace(content);
+		var json = {
+			fakelogin: {}
+		};
+		var attendeesArr:Array<AST.AttendeeObj> = Json.parse(content).attendees;
+		// log(attendeesArr.length);
+		for (i in 0...attendeesArr.length) {
+			var _attendees = attendeesArr[i];
+			// trace(_attendees);
+
+			var obj = Reflect.field(json, 'fakelogin');
+
+			var hash = Sha256.encode('${_attendees.userName}1234');
+			var token = Sha256.encode('${_attendees.firstName}1234');
+
+			Reflect.setField(_attendees, 'token', token);
+
+			Reflect.setField(obj, '${hash}', _attendees);
+		}
+
+		log('write json', 1);
+
+		File.saveContent('${Folder.EXPORT}/fake_login.json', Json.stringify(json, null, '\t'));
+	}
+
+	function convertFakeDatabase(path:String) {
 		log('convertFakeDatabase');
-		// var content = File.getContent('data/attendees_00010.json');
-		// var content = File.getContent('data/attendees_00100.json');
-		var content = File.getContent('data/attendees_00176.json');
+		var content = File.getContent(path);
 		// trace(content);
 		var json = {
 			fakedatabase: {}
@@ -48,7 +80,7 @@ class MainNode {
 			Reflect.setField(obj, '${_attendees._id}', _attendees);
 		}
 
-		log('write json');
+		log('write json', 1);
 
 		File.saveContent('${Folder.EXPORT}/fake_database.json', Json.stringify(json, null, '\t'));
 	}
@@ -71,11 +103,9 @@ class MainNode {
 		FileSystem.createDirectory(Folder.EXPORT + '/combo');
 	}
 
-	function generateQR4Attendees() {
+	function generateQR4Attendees(path:String) {
 		// read the file
-		// var content = File.getContent('data/attendees_00010.json');
-		var content = File.getContent('data/attendees_00100.json');
-		// var content = File.getContent('data/attendees_00176.json');
+		var content = File.getContent(path);
 		// trace(content);
 
 		var attendeesArr:Array<AST.AttendeeObj> = Json.parse(content).attendees;
@@ -153,7 +183,7 @@ class MainNode {
 			}
 		}
 
-		log('write json');
+		log('write json', 1);
 
 		File.saveContent('${Folder.EXPORT}/export_scribus.json', Json.stringify(json, null, '\t'));
 	}
