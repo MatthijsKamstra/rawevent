@@ -28,6 +28,20 @@ npm i --save-dev @types/qrcode-svg
 npm install js-sha256 qrcode-svg
 ```
 
+## live server
+
+create a file `settings.json` file het `.vscode` - folder
+
+```json
+{
+  "liveServer.settings.root": "/dist/rawevent"
+}
+```
+
+```bash
+touch .vscode/settings.json
+```
+
 ## Inspiration
 
 Vergelijkbare oplossing aan de website kant: https://www.yellenge.nl/succesvol-event/
