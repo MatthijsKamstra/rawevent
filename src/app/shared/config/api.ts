@@ -23,15 +23,30 @@ export class Api {
 				helpApi: `${environment.apiUrl}${Constants.helpApi}`,
 				settingsApi: `${environment.apiUrl}${Constants.settingsApi}`,
 
-				loginApi: `${environment.apiUrl}${Constants.loginURL}`,
-				logoutApi: `${environment.apiUrl}${Constants.logoutURL}`,
+				// loginApi: `${environment.apiUrl}${Constants.loginURL}`,
+				// logoutApi: `${environment.apiUrl}${Constants.logoutURL}`,
+
+				// users(): string {
+				// 	return `${environment.apiUrl}${Constants.apiUsers}`;
+				// },
+
+				// userById(id: string): string {
+				// 	return `${environment.apiUrl}${Constants.apiUserById.replace(':id', `${id}`)}`;
+				// },
+
+
+				// for now replace PRD with dummy data
+
+				loginApi: `/assets/dummy/json/fake_login.json`,
+				logoutApi: `/assets/dummy/json/logout.json`,
 
 				users(): string {
-					return `${environment.apiUrl}${Constants.apiUsers}`;
+					return `/assets/dummy/json/fake_database.json`;
 				},
 
 				userById(id: string): string {
-					return `${environment.apiUrl}${Constants.apiUserById.replace(':id', `${id}`)}`;
+					// src/assets/dummy/json/fake_database.json
+					return `/assets/dummy/json/fake_database.json?id=${id}`;
 				},
 			}
 		} else {
