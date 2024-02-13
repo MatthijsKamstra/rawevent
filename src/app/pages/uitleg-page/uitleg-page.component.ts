@@ -86,13 +86,34 @@ export class UitlegPageComponent implements OnInit {
           this.router.navigate([Redirects.REDIRECT_AFTER_LOGIN_FALSE]);
         } else {
           console.log(user);
+          // correct inlog!
           this.router.navigate([Redirects.DASHBOARD]);
+          this.reloadPage();
+          // this.redirectTo(Redirects.DASHBOARD);
         }
       },
       error: (error: HttpErrorResponse) => {
         console.log(error);
       }
     });
+  }
+
+  reloadPage() {
+    // Refresh the page after a delay of 3 seconds
+    setTimeout(function () {
+      location.reload();
+    }, 10);
+  }
+
+  redirectTo(uri: string) {
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([uri])
+    });
+  }
+
+  gotoQR(user: IUser) {
+    var url = `/user/qr/${user._id}`;
+    this.router.navigate([url]);
   }
 
 }

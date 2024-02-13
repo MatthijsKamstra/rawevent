@@ -1,10 +1,9 @@
 <app-hero-visual img="https://picsum.photos/id/20/1024/400/"></app-hero-visual>
 
-
 <section class="container">
-	<h2>{{this.title}}</h2>
-	<h3>User id: {{this.id}}</h3>
-	<div debug>
+	<div debug *ngIf="false">
+		<h2>{{this.title}}</h2>
+		<h3>User id: {{this.id}}</h3>
 		<div class="hstack gap-2">
 			<a class="btn btn-dark"
 				href="./user/qr/2b40c6d0-9426-40a6-8479-6f274c64ded7">2b40c6d0-9426-40a6-8479-6f274c64ded7</a>
@@ -18,25 +17,40 @@
 		</div>
 	</div>
 
-	<div *ngIf="this.user">
+	<div *ngIf="this.attendee">
 		<h2>Info attendee</h2>
 		<p>
-			FirstName: {{this.user.firstName}}<br />
-			LastName: {{this.user.lastName}}<br />
-			Company: {{this.user.company}}
+			<span class="">Firstname:</span> {{this.attendee.firstName}}<br />
+			LastName: {{this.attendee.lastName}}<br />
+			Company: {{this.attendee.company}}
 		</p>
 	</div>
 
+	<div *ngIf="this.attendee">
+		<app-icons icon="{{attendeeLogedIn()}}"></app-icons>
+		Ingelogt: {{attendeeLogedIn()}}
+	</div>
+
+	<div *ngIf="!getCurrentUser()">
+		<app-icons icon="user"></app-icons>
+		Ingelogt als user: {{getCurrentUser()}}
+	</div>
+
+
+	<div *ngIf="!currentAttendeeIsUser() && this.attendee && this.user">
+		<app-icons icon="{{currentAttendeeIsUser()}}"></app-icons>
+		Ingelogt als de persoon op deze pagina: {{currentAttendeeIsUser()}}
+		({{this.attendee.firstName}} {{this.attendee.lastName}} / {{this.user.firstName}} {{this.user.lastName}})
+	</div>
+
+
 	<h3>Lorem ipsum</h3>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ex orci. Phasellus magna ante, ullamcorper
-		non
-		leo in, fermentum efficitur felis. Donec vitae mattis erat. Sed vel odio arcu. Praesent porta nulla et
-		sapien
-		interdum, id placerat leo semper. Mauris eget consequat sem. Suspendisse tincidunt et est sit amet laoreet.
-		Vivamus nec rutrum enim. In malesuada nibh non tempor imperdiet. In dignissim, felis in tincidunt consequat,
-		metus augue euismod diam, ut eleifend turpis nisi vitae ipsum. Nulla mattis, magna at convallis mattis, sem
-		justo viverra ligula, maximus dignissim dolor nunc id arcu. Nullam auctor, ligula ac cursus lobortis, sapien
-		mauris lacinia felis, in ultrices mi dolor quis arcu. Vivamus iaculis tincidunt lobortis. In hac habitasse
-		platea dictumst.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ex orci. Phasellus magna ante, ullamcorper
+		non leo in, fermentum efficitur felis. Donec vitae mattis erat. Sed vel odio arcu. Praesent porta nulla et
+		sapien interdum, id placerat leo semper. Mauris eget consequat sem. Suspendisse tincidunt et est sit amet
+		laoreet. Vivamus nec rutrum enim. In malesuada nibh non tempor imperdiet. In dignissim, felis in tincidunt
+		consequat, metus augue euismod diam, ut eleifend turpis nisi vitae ipsum. Nulla mattis, magna at convallis
+		mattis, sem justo viverra ligula, maximus dignissim dolor nunc id arcu. Nullam auctor, ligula ac cursus
+		lobortis, sapien mauris lacinia felis, in ultrices mi dolor quis arcu. Vivamus iaculis tincidunt lobortis. In
+		hac habitasse platea dictumst.</p>
 </section>
