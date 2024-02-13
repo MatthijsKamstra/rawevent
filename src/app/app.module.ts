@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CtaComponent } from './components/cta/cta.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeroVideoRawGeniusComponent } from './components/hero-video-rawgenius/hero-video-rawgenius.component';
 import { HeroVisualComponent } from './components/hero-visual/hero-visual.component';
@@ -19,6 +20,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { LogoutPageComponent } from './pages/logout-page/logout-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
 import { SpeakersPageComponent } from './pages/speakers-page/speakers-page.component';
 import { ColorsComponent } from './pages/styleguide/colors/colors.component';
 import { StyleguideComponent } from './pages/styleguide/styleguide.component';
@@ -26,7 +28,6 @@ import { UitlegPageComponent } from './pages/uitleg-page/uitleg-page.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { WipPageComponent } from './pages/wip-page/wip-page.component';
 import { DebugDirective } from './shared/directives/debug.directive';
-import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { SettingsPageComponent } from './pages/settings-page/settings-page.compo
     UserPageComponent,
     WipPageComponent,
     SettingsPageComponent,
+    CtaComponent
   ],
   imports: [
     BrowserModule,

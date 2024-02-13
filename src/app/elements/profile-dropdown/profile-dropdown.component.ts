@@ -13,14 +13,14 @@ import { environment } from 'src/environments/environment';
 })
 export class ProfileDropdownComponent implements OnInit {
 
+	@Output() change = new EventEmitter();
+
 	protected TITLE: string = 'Profile';
 	title: string = this.TITLE;
 	userName: string = '...';
 
 	isEnvApiEnabled: boolean = this.environmentService.isApiEnabled();
 	isHiddenIsProduction: boolean = this.environmentService.isProduction();
-
-	@Output() change = new EventEmitter();
 
 	constructor(
 		private securityService: SecurityService,
@@ -34,7 +34,7 @@ export class ProfileDropdownComponent implements OnInit {
 	getUser() {
 		const user: IUser | null = this.securityService.getUser();
 		if (user) {
-			this.userName = user.userName;
+			this.userName = user.firstName + ' ' + user.lastName;
 		}
 	}
 

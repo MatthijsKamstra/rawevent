@@ -16,6 +16,7 @@ import { SecurityCookieService } from './security-cookie.service';
   providedIn: 'root',
 })
 export class SecurityService {
+
   constructor(
     private http: HttpClient,
     private securityCookieService: SecurityCookieService,

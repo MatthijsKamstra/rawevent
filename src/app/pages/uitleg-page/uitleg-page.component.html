@@ -15,6 +15,7 @@
 					<th scope="col">username</th>
 					<th scope="col">password</th>
 					<th scope="col">sha256</th>
+					<th scope="col">login as</th>
 					<th scope="col">QR</th>
 				</tr>
 			</thead>
@@ -24,8 +25,11 @@
 					<td>{{user.userName}}</td>
 					<td>1234</td>
 					<td>{{this.convert2Sha256(user.userName)}}</td>
+					<td><button class="btn btn-dark" (click)="login(user)">Login is as {{user.firstName}}</button></td>
 					<td>
-						<div [innerHTML]="this.convertQR(user)"></div>
+						<a href="{{this.toUserUrl(user)}}">
+							<div [innerHTML]="this.convertQR(user)"></div>
+						</a>
 					</td>
 				</tr>
 
