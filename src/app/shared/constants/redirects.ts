@@ -12,4 +12,5 @@ export class Redirects {
 	public static REDIRECT_NOT_FOUND: string = '/not-found';
 
 	static REDIRECT_AFTER_LOGIN_FALSE: string = '/login';
+	static DASHBOARD: string = '/user/dashboard';
 }

@@ -163,6 +163,12 @@ export class IconsComponent implements OnInit {
 
 			case 'signup': this.icon = 'fa-edit'; break;
 
+			case 'settings': this.icon = 'fa-cog'; break;
+			case 'uitleg': this.icon = 'fa-bolt'; break;
+			case 'help': this.icon = 'fa-hand-spock-o'; break;
+			case 'password recover': this.icon = 'fa-life-saver'; break;
+
+
 			default:
 				console.log(`case '${this.icon.toLowerCase()}': this.icon = '${this.icon.toLowerCase()}'; break;`);
 				this.icon = 'fa-remove';

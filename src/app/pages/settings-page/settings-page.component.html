@@ -4,13 +4,24 @@
 <section class="container">
 	<h2>{{this.title}}</h2>
 
-
-	<p>
+	<!-- <p>
 		isApiEnabled: {{this.isApiEnabled}}
+
 	</p>
 	<p>
 		isProduction: {{this.isProduction}}
-	</p>
+	</p> -->
+
+	<div class="form-check form-switch">
+		<input class="form-check-input" type="checkbox" role="switch" id="isApiEnabled" [checked]="this.isApiEnabled"
+			disabled>
+		<label class="form-check-label" for="isApiEnabled">isApiEnabled</label>
+	</div>
+	<div class="form-check form-switch">
+		<input class="form-check-input" type="checkbox" role="switch" id="isProduction" [checked]="this.isProduction"
+			disabled>
+		<label class="form-check-label" for="isProduction">isProduction</label>
+	</div>
 
 	<div *ngIf="this.user">
 		<p> FirstName and LastName:
@@ -24,5 +35,10 @@
 
 		<h3>token set in session cookie</h3>
 		<code>{{this.currentToken()}}</code>
+
+		<div class="my-3">
+
+			<button class="btn btn-dark" (click)="onDashboardClick()">Go to Dashboard</button>
+		</div>
 	</div>
 </section>

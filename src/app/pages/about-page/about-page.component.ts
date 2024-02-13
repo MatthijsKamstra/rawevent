@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-page.component.scss']
 })
 export class AboutPageComponent {
+  title = "About"
+
 
 }

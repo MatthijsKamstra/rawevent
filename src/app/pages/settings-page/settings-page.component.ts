@@ -14,6 +14,7 @@ import { IUser } from 'src/app/shared/interfaces/i-user';
 })
 export class SettingsPageComponent implements OnInit {
 
+
   title: string = 'Settings';
 
   user!: IUser;
@@ -59,5 +60,9 @@ export class SettingsPageComponent implements OnInit {
 
   currentToken(): string {
     return this.securityService.currentToken();
+  }
+
+  onDashboardClick() {
+    this.router.navigate([Redirects.DASHBOARD]);
   }
 }
