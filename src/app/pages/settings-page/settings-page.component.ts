@@ -29,7 +29,7 @@ export class SettingsPageComponent implements OnInit {
 
   ngOnInit(): void {
     const credentials: ICredentials = {
-      username: 'slyvia_vos',
+      username: 'kortney_brouwer',
       password: '1234'
     }
     this.loginUser(credentials);
@@ -50,7 +50,6 @@ export class SettingsPageComponent implements OnInit {
           this.user = user;
           console.log(user);
         }
-
       },
       error: (error: HttpErrorResponse) => {
         console.log(error);
