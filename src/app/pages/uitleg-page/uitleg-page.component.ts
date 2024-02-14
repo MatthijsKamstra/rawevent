@@ -49,7 +49,7 @@ export class UitlegPageComponent implements OnInit {
         console.error(err);
       },
       complete() {
-        console.info('complete');
+        // console.info('complete');
       },
     });
   }

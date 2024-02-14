@@ -37,18 +37,17 @@ export class UserPageComponent implements OnInit {
         };
         this.id = id;
 
-        console.log(this.id);
-
+        // console.log(this.id);
 
         this.getCurrentUser();
 
         this.userService.getUserById(this.id).subscribe({
             next: (value) => {
                 if (!value) {
-                    console.log('unknown');
+                    console.log('unknown attendee');
                     this.router.navigate([Redirects.REDIRECT_HOME]);
                 } else {
-                    console.log('known');
+                    console.log('known attendee');
                     console.log(value);
                     this.attendee = value;
                 }
@@ -57,7 +56,7 @@ export class UserPageComponent implements OnInit {
                 console.error(err);
             },
             complete() {
-                console.info('complete');
+                // console.info('complete');
             },
         });
     }

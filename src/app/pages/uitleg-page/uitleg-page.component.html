@@ -14,10 +14,10 @@
 					<th scope="col">#</th>
 					<th scope="col">username</th>
 					<th scope="col">password</th>
-					<th scope="col">sha256</th>
-					<th scope="col">Login as</th>
 					<th scope="col">Goto QR page</th>
+					<th scope="col">Login as</th>
 					<th scope="col">QR</th>
+					<th scope="col">sha256</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -25,15 +25,24 @@
 					<th scope="row">{{i+1}}</th>
 					<td>{{user.userName}}</td>
 					<td>1234</td>
-					<td>{{this.convert2Sha256(user.userName)}}</td>
+					<td><button class="btn btn-dark" (click)="gotoQR(user)">QR Page {{user.firstName}}</button></td>
 					<td><button class="btn btn-dark" (click)="login(user)">Login is as {{user.firstName}}</button></td>
-					<td><button class="btn btn-dark" (click)="gotoQR(user)">Goto QR page of {{user.firstName}}</button>
-					</td>
 					<td>
-						<a href="{{this.toUserUrl(user)}}">
-							<div [innerHTML]="this.convertQR(user)"></div>
-						</a>
+						<button class="btn btn-outline-dark text-nowrap" type="button" data-bs-toggle="collapse"
+							attr.data-bs-target="#collapseExample{{user._id}}" aria-expanded="false"
+							aria-controls="collapseExample">
+							<app-icons icon="fa-qrcode"></app-icons>
+						</button>
+
+						<div class="collapse" id="collapseExample{{user._id}}">
+							<div class="card card-body">
+								<a href="{{this.toUserUrl(user)}}">
+									<div [innerHTML]="this.convertQR(user)"></div>
+								</a>
+							</div>
+						</div>
 					</td>
+					<td>{{this.convert2Sha256(user.userName)}}</td>
 				</tr>
 
 			</tbody>
