@@ -28,6 +28,7 @@ import { UitlegPageComponent } from './pages/uitleg-page/uitleg-page.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { WipPageComponent } from './pages/wip-page/wip-page.component';
 import { DebugDirective } from './shared/directives/debug.directive';
+import { LoginSimpleComponent } from './components/login-simple/login-simple.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { DebugDirective } from './shared/directives/debug.directive';
     UserPageComponent,
     WipPageComponent,
     SettingsPageComponent,
-    CtaComponent
+    CtaComponent,
+    LoginSimpleComponent
   ],
   imports: [
     BrowserModule,

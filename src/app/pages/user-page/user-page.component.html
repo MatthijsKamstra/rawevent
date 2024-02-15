@@ -1,7 +1,7 @@
 <!-- <app-hero-visual img="https://picsum.photos/id/20/1024/400/"></app-hero-visual> -->
 <app-hero-visual img="assets/images/user_header.jpeg"></app-hero-visual>
 
-<section class="container">
+<section class="container" *ngIf="this.attendee">
 	<div debug *ngIf="false">
 		<h2>{{this.title}}</h2>
 		<h3>User id: {{this.id}}</h3>
@@ -18,67 +18,143 @@
 		</div>
 	</div>
 
-	<div *ngIf="this.attendee">
-		<h2>Info attendee</h2>
-		<p>
-			<span class="">Firstname:</span> {{this.attendee.firstName}}<br />
-			LastName: {{this.attendee.lastName}}<br />
-			Company: {{this.attendee.company}}
+	<div class="row">
+		<div class="col-12">
+			<h2 *ngIf="!this.currentAttendeeIsUser()">
+				Welcome op de event pagina van {{this.attendee.firstName}} {{this.attendee.lastName}}
+			</h2>
+			<h2 *ngIf="this.currentAttendeeIsUser()">
+				Hi {{this.attendee.firstName}} {{this.attendee.lastName}} 🚀
+			</h2>
+			<p>
+				<span class="">Firstname:</span> {{this.attendee.firstName}}<br />
+				LastName: {{this.attendee.lastName}}<br />
+				Company: {{this.attendee.company}}
+			</p>
+		</div>
+	</div>
+
+	<div class="row my-5">
+
+		<div class="alert alert-info">
+
+			<div>
+				<app-icons icon="{{attendeeLogedIn()}}"></app-icons>
+				Ingelogt: {{attendeeLogedIn()}}
+			</div>
+
+			<div *ngIf="this.user">
+				<app-icons icon="user"></app-icons>
+				Ingelogt als user: {{getCurrentUser()}}
+			</div>
+
+			<div *ngIf="!currentAttendeeIsUser() && this.user">
+				<app-icons icon="{{currentAttendeeIsUser()}}"></app-icons>
+				Ingelogt als de persoon op deze pagina: {{currentAttendeeIsUser()}}
+				({{this.attendee.firstName}} {{this.attendee.lastName}} / {{this.user.firstName}}
+				{{this.user.lastName}})
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row my-5" *ngIf="!this.user">
+		<div class="col-12 col-md-6">
+			<h2>Welkom bij het RawEvent!</h2>
+			<p>Het is een waar genoegen om jou en je bedrijf hier te hebben, en we zijn enorm enthousiast om je te
+				vertellen over de speciale aanbieding die we hebben samengesteld in samenwerking met RawWorks en
+				Interstellar. Dit is een unieke kans die je niet mag missen!</p>
+			<p>Als je inlogt, stap je binnen in een wereld vol mogelijkheden. Ons aanbod is ontworpen om jouw bedrijf te
+				helpen groeien en te bloeien, op een manier die perfect is afgestemd op jouw behoeften en
+				doelstellingen. Met de gecombineerde expertise van RawWorks en Interstellar staan we klaar om je te
+				begeleiden op jouw reis naar succes.
+			</p>
+		</div>
+		<div class="col-12 col-md-6">
+			<h2>Please login</h2>
+			<p>Enter you credentials</p>
+			<app-login-simple></app-login-simple>
+		</div>
+
+
+		<h3>Voordelen van het Aanbod:</h3>
+		<ol>
+			<li><strong>Maatwerkoplossingen:</strong> Ons aanbod is niet one-size-fits-all. We begrijpen dat elk bedrijf
+				uniek
+				is, en daarom zorgen we ervoor dat onze oplossingen volledig zijn afgestemd op jouw specifieke situatie.
+			</li>
+			<li><strong>Expertise van wereldklasse:</strong> RawWorks en Interstellar zijn marktleiders op hun
+				respectievelijke
+				gebieden. Met jarenlange ervaring en diepgaande kennis, brengen we een schat aan expertise naar de
+				tafel.
+			</li>
+			<li><strong>Groei en innovatie:</strong> Ons doel is niet alleen om je bedrijf te ondersteunen, maar ook om
+				het
+				te
+				laten gedijen. We geloven in de kracht van groei en innovatie, en we zullen er alles aan doen om ervoor
+				te
+				zorgen dat jouw bedrijf voorop blijft lopen in een steeds veranderende markt.</li>
+			<li><strong>Ondersteuning op maat:</strong> Bij RawWorks en Interstellar geloven we in een persoonlijke
+				aanpak.
+				We
+				begrijpen dat elk bedrijf zijn eigen uitdagingen en doelstellingen heeft, en daarom bieden we
+				ondersteuning
+				op
+				maat.</li>
+		</ol>
+		<p>Kortom, het aanbod van RawWorks en Interstellar is een kans die je niet wilt missen. Het is jouw ticket naar
+			groei,
+			succes en innovatie. Dus waar wacht je nog op? Log in en ontdek de mogelijkheden die op jou wachten. Welkom
+			bij
+			het
+			RawEvent - de toekomst begint hier!</p>
+	</div>
+
+	<div class="row" *ngIf="!this.currentAttendeeIsUser() && this.user">
+		<h3>Hi {{this.user.firstName}}</h3>
+		<p>goed dat je ingelogt bent, bezoek je persoonlijk <a routerLink="/user/dashboard">aanbiedings</a> pagina</p>
+		<p><button class="btn btn-dark">Connect</button>
+			als je contact wil opnemen met <strong>{{this.attendee.firstName}} {{this.attendee.lastName}}</strong> vraag
+			dan voor een
+			click dan op de connect button
+
+		</p>
+		<p><button class="btn btn-dark">Connect</button>
+			<strong>{{this.attendee.firstName}} {{this.attendee.lastName}}</strong> heeft nog geen gegevens gedeelt, je
+			kan vragen of dat kan alleen met jouw
+
+		</p>
+		<p><button class="btn btn-dark">Ik heb met deze persoon gesproken</button>
+
 		</p>
 	</div>
 
-	<div *ngIf="this.attendee">
-		<app-icons icon="{{attendeeLogedIn()}}"></app-icons>
-		Ingelogt: {{attendeeLogedIn()}}
+	<div class="row" *ngIf="this.currentAttendeeIsUser()">
+		<section class="container">
+			<div class="row">
+				<h2>Hier is je uniek aanbieding</h2>
+				<p>RawWorks en Interstellar bundelen hun krachten om bedrijven een uniek aanbod te presenteren: een
+					grondige
+					analyse
+					van de bestaande IT-infrastructuur, gevolgd door op maat gemaakte aanpassingen voor verbeterde
+					prestaties,
+					veiligheid en schaalbaarheid. Door de synergie tussen RawWorks' expertise in IT-infrastructuur en
+					Interstellar's
+					cloudoplossingen, bieden ze een holistische benadering die bedrijven in staat stelt om flexibel te
+					opereren
+					en
+					snel te reageren op veranderende marktomstandigheden. Het resultaat is een robuuste en
+					toekomstbestendige
+					IT-omgeving die de basis legt voor succes op lange termijn.</p>
+			</div>
+		</section>
+
+		<section class="container my-5">
+			<app-cta title="Maak een afspraak"></app-cta>
+		</section>
+
+		<section class="container">
+			<img src="assets/images/fakedashboard.jpeg" width="100%">
+		</section>
 	</div>
-
-	<div *ngIf="this.user">
-		<app-icons icon="user"></app-icons>
-		Ingelogt als user: {{getCurrentUser()}}
-	</div>
-
-
-	<div *ngIf="!currentAttendeeIsUser() && this.attendee && this.user">
-		<app-icons icon="{{currentAttendeeIsUser()}}"></app-icons>
-		Ingelogt als de persoon op deze pagina: {{currentAttendeeIsUser()}}
-		({{this.attendee.firstName}} {{this.attendee.lastName}} / {{this.user.firstName}} {{this.user.lastName}})
-	</div>
-
-	<h2>Welkom bij het RawEvent!</h2>
-	<p>Het is een waar genoegen om jou en je bedrijf hier te hebben, en we zijn enorm enthousiast om je te vertellen
-		over de
-		speciale aanbieding die we hebben samengesteld in samenwerking met RawWorks en Interstellar. Dit is een unieke
-		kans
-		die je niet mag missen!</p>
-	<p>Als je inlogt, stap je binnen in een wereld vol mogelijkheden. Ons aanbod is ontworpen om jouw bedrijf te helpen
-		groeien en te bloeien, op een manier die perfect is afgestemd op jouw behoeften en doelstellingen. Met de
-		gecombineerde expertise van RawWorks en Interstellar staan we klaar om je te begeleiden op jouw reis naar
-		succes.
-	</p>
-	<h3>Voordelen van het Aanbod:</h3>
-	<ol>
-		<li><strong>Maatwerkoplossingen:</strong> Ons aanbod is niet one-size-fits-all. We begrijpen dat elk bedrijf
-			uniek
-			is, en daarom zorgen we ervoor dat onze oplossingen volledig zijn afgestemd op jouw specifieke situatie.
-		</li>
-		<li><strong>Expertise van wereldklasse:</strong> RawWorks en Interstellar zijn marktleiders op hun
-			respectievelijke
-			gebieden. Met jarenlange ervaring en diepgaande kennis, brengen we een schat aan expertise naar de tafel.
-		</li>
-		<li><strong>Groei en innovatie:</strong> Ons doel is niet alleen om je bedrijf te ondersteunen, maar ook om het
-			te
-			laten gedijen. We geloven in de kracht van groei en innovatie, en we zullen er alles aan doen om ervoor te
-			zorgen dat jouw bedrijf voorop blijft lopen in een steeds veranderende markt.</li>
-		<li><strong>Ondersteuning op maat:</strong> Bij RawWorks en Interstellar geloven we in een persoonlijke aanpak.
-			We
-			begrijpen dat elk bedrijf zijn eigen uitdagingen en doelstellingen heeft, en daarom bieden we ondersteuning
-			op
-			maat.</li>
-	</ol>
-	<p>Kortom, het aanbod van RawWorks en Interstellar is een kans die je niet wilt missen. Het is jouw ticket naar
-		groei,
-		succes en innovatie. Dus waar wacht je nog op? Log in en ontdek de mogelijkheden die op jou wachten. Welkom bij
-		het
-		RawEvent - de toekomst begint hier!</p>
-
 </section>

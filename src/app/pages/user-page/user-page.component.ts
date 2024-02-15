@@ -70,7 +70,7 @@ export class UserPageComponent implements OnInit {
 
     currentAttendeeIsUser() {
         const user = this.securityService.getUser();
-        if (!user) return false;
+        if (!user || !this.attendee) return false;
         if (this.attendee._id === user?._id) {
             return true;
         } else {

@@ -1,13 +1,10 @@
-
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
 import { SecurityService } from 'src/app/services/security.service';
 import { Redirects } from 'src/app/shared/constants/redirects';
 import { ICredentials } from 'src/app/shared/interfaces/i-credentials';
-
 import { IUser } from 'src/app/shared/interfaces/i-user';
 
 @Component({
@@ -72,7 +69,7 @@ export class LoginComponent {
 	// ____________________________________ onHandlers ____________________________________
 
 	onDebug1Handler() {
-		this.loginForm.setValue({ password: '1234', username: 'admin' });
+		this.loginForm.setValue({ password: '1234', username: 'zane_de_graaf' });
 	}
 
 	onSubmitForm() {
