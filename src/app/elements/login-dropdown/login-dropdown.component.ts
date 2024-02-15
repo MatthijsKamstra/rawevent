@@ -12,10 +12,12 @@ export class LoginDropdownComponent {
   @Output() change = new EventEmitter();
 
   onClickHandler() {
-    const dropdownEl = document.getElementById('loginDropdown');
-    const dropdown = new bootstrap.Dropdown(dropdownEl);
-    dropdown.hide();
-    this.change.emit();
+    // const dropdownEl = document.getElementById('loginDropdown');
+    // const dropdown = new bootstrap.Dropdown(dropdownEl);
+    // dropdown.hide();
+    // this.change.emit();
+    console.log('login');
+
   }
 
 }
